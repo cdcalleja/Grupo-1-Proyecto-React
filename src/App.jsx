@@ -1,9 +1,18 @@
+import Details from "./components/Detalles/Details";
+import Products from "./components/Productos/Products";
+import ModoOscuro from "./components/Darktheme/ModoOscuro";
 
 
 function App() {
   return (
     <div>
-{/* ToDoList
+      <ModoOscuro></ModoOscuro>
+      <Products></Products>
+      <br /><br /><br />
+      <Details></Details>
+  
+
+      {/* ToDoList
 Navbar (Rodrigo)
 Hero / Banner (Mileidy)
 Productos (Christian)
