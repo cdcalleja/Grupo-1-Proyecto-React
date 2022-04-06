@@ -1,7 +1,5 @@
-import Footer from "./components/Footer/Footer.js";
-import Main from "./components/Main/Main.js";
-// import Nav from "./components/Nav/Nav.js";
-import Header from "./components/Nav/Nav.js";
+// import Nav from "./components/Nav/Nav.jsx";
+import Header from "./components/Nav/Nav.jsx";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -23,11 +21,7 @@ Footer (Berta) */}
       <Header/>
       
       {/* <Nav/> */}
-      
-      <Main/>
-
-      <Footer/>
-      
+            
     </div>
   );
 }
