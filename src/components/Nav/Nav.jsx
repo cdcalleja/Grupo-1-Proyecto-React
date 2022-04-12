@@ -1,7 +1,7 @@
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faMagnifyingGlass, faUser, faCartShopping  } from "@fortawesome/free-solid-svg-icons"
-import Logo from './img/Logo5.jpeg'
+import Logo from './img/Logo6.png'
 
 
 import { Navbar, Container, NavDropdown, Nav } from "react-bootstrap"
@@ -12,8 +12,8 @@ const NavBar = () => {
     const styles =   {
             fontSize: "25px",
             textTransform: "capitalize",
-            fontFamily:"cursive"
-          
+            fontFamily:"cursive",
+                      
         } 
 
     
@@ -21,7 +21,7 @@ const NavBar = () => {
     return (
 
 
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" style={{borderRadius:"20px"}}>
+        <Navbar collapseOnSelect expand="lg" bg="light" variant="light" style={{borderRadius:"20px"}}>
         <Container className= "d-flex p-2">
         <Navbar.Brand href="#home">
         <img src={Logo} alt="logo" style={{width: "100px"}}/>

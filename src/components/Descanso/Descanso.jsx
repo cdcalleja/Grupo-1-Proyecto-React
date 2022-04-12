@@ -12,6 +12,7 @@ export const Descanso = () => {
         width:"100%",
         height: "500px",
         borderRadius: "50px",
+        padding: "20px"
         
     }
 
@@ -30,7 +31,7 @@ export const Descanso = () => {
                     />
                     <Carousel.Caption>
                         <h3>Visita nuestros locales</h3>
-                        <p>Todas las marcas disponibles!!</p>
+                        <p>Montagne</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
@@ -42,7 +43,7 @@ export const Descanso = () => {
                     />
                     <Carousel.Caption>
                         <h3>Visita nuestros locales</h3>
-                        <p>Todas las marcas disponibles!!</p>
+                        <p>Puma</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
@@ -54,7 +55,7 @@ export const Descanso = () => {
                     />
                     <Carousel.Caption>
                         <h3>Visita nuestros locales</h3>
-                        <p>Todas las marcas disponibles!!</p>
+                        <p>Under Armor</p>
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
