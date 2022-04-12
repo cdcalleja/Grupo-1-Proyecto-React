@@ -1,21 +1,10 @@
-
-
+import Banner from "./components/Banner";
+import { Carousel } from 'react-bootstrap/Carousel';
 function App() {
   return (
     <div>
-{/* ToDoList
-Navbar (Rodrigo)
-Hero / Banner (Mileidy)
-Productos (Christian)
-Detalles / particularidades (Christian)
-Seccion -> Detalles e imágenes (Santiago)
-Seccion -> Detalles e imágenes 2 (Mileidy)
-Descanso (Rodrigo)
-Carousel (Santiago)
-Redes (Berta)
-Footer (Berta) */}
+<Banner></Banner>
     </div>
   );
 }
-
-export default App;
+  export default App;
