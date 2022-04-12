@@ -7,11 +7,13 @@ import Logo from './img/Logo5.jpeg'
 import { Navbar, Container, NavDropdown, Nav } from "react-bootstrap"
 
 
-const Header = () => {
+const NavBar = () => {
 
     const styles =   {
             fontSize: "25px",
-            textTransform: "uppercase"        
+            textTransform: "capitalize",
+            fontFamily:"cursive"
+          
         } 
 
     
@@ -19,15 +21,15 @@ const Header = () => {
     return (
 
 
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-        <Container>
+        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" style={{borderRadius:"20px"}}>
+        <Container className= "d-flex p-2">
         <Navbar.Brand href="#home">
-        <img src={Logo} alt="logo" style={{width: "80px"}}/>
+        <img src={Logo} alt="logo" style={{width: "100px"}}/>
             </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mx-auto"   style={styles}>
-          <NavDropdown title="CLOTHE" id="collasible-nav-dropdown" >
+          <NavDropdown title="Clothes" id="collasible-nav-dropdown" >
               <NavDropdown.Item href="#action/3.1">men</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">women</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.3">kids</NavDropdown.Item>
@@ -48,10 +50,7 @@ const Header = () => {
                 <Nav.Link href="#deets">
              <FontAwesomeIcon icon={faCartShopping} />
                 </Nav.Link>
-            <Nav.Link eventKey={2} href="#memes">
-              Dank memes
-            </Nav.Link>
-          </Nav>
+            </Nav>
         </Navbar.Collapse>
         </Container>
       </Navbar>
@@ -60,54 +59,6 @@ const Header = () => {
 
 }
 
-export default Header
+export default NavBar
 
-// alt shift F me acomoda el codigo
-
-  // const divs = {
-
-    //     backgroundColor: 'lightgreen',
-    //     witdh: '100%',
-    //     height: '200px',
-    // }
-
-    // const NavegationBar = [
-
-    //     { id: 1, name: 'Home' },
-    //     { id: 2, name: 'Productos' },
-    //     { id: 3, name: 'Ofertas' },
-    //     { id: 4, name: 'Destacados' },
-    //     { id: 5, name: 'Nosotros' },
-    // ]
-
-//     <header style={divs}>
-
-//     <h1>Nav</h1>
-
-
-    
-//     <nav style={{textAlign: "right"}}>
-//         <FontAwesomeIcon icon={faCartShopping} />
-//         <FontAwesomeIcon icon={faMagnifyingGlass} />
-//         <FontAwesomeIcon icon={faUser} />
-
-//         <ul style={{ listStyle: 'none', display: 'flex' }}>
-
-//             <img src={Logo2} style={{ width: '80px', backgroundColor: "lightgreen" }} alt="Logo" img />
-
-//             <img src={Logo} style={{ width: '80px', backgroundColor: "lightgreen" }} alt="Logo" img />
-
-//             <img src={Logo3} style={{ width: '80px', backgroundColor: "lightgreen" }} alt="Logo" img />
-
-//             {NavegationBar.map(sec => {
-
-//                 return <li key={sec.id}>{sec.name}  </li>
-//             })}
-
-
-
-//         </ul>
-
-
-//     </nav> 
-//  </header>
+      

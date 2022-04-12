@@ -1,6 +1,7 @@
 // import Nav from "./components/Nav/Nav.jsx";
-import Header from "./components/Nav/Nav.jsx";
+import NavBar from "./components/Nav/Nav.jsx";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Descanso } from "./components/Descanso/Descanso.jsx";
 
 
 function App() {
@@ -18,9 +19,10 @@ Carousel (Santiago)
 Redes (Berta)
 Footer (Berta) */}
       
-      <Header/>
+      {/* <Header/> */}
       
-      {/* <Nav/> */}
+      <NavBar/>
+      <Descanso/>
             
     </div>
   );
