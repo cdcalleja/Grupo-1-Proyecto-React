@@ -11,9 +11,9 @@ const Details = () => {
                     whyusDB.map((e, index) => (
                         <Col xs={12} md={4} lg={2} key={index}>
                             <Card className="text-center shadow m-2 m-md-1" style={{boxSizing:"content-box"}} >
-                                <Card.Img className="w-50 mx-auto" variant="top" src={e.img}  />
+                                <Card.Img className="w-50 mx-auto" variant="top" src={e.img} />
                                 <Card.Body >
-                                    <Card.Title>{e.h5}</Card.Title>
+                                    <Card.Title style={{textDecoration: "underline"}}>{e.h5} </Card.Title>
                                     <Card.Text>
                                         {e.p}
                                     </Card.Text>

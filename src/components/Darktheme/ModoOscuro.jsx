@@ -5,6 +5,8 @@ import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
 import "./darktheme.css";
 import { useState } from "react";
 
+
+
 const ModoOscuro = () => {
     //   const toggleBtn = document.querySelector(".toggle-btn");
     const html = document.documentElement;
