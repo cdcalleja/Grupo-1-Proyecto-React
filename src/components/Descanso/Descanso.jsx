@@ -5,7 +5,7 @@ import img2 from "../Descanso/img/local2.jpg"
 import img3 from "../Descanso/img/local4.jpg"
 
 
-export const Descanso = () => {
+ const Descanso = () => {
 
 
     const estilos = {
@@ -62,3 +62,4 @@ export const Descanso = () => {
         </>
     )
 }
+export default Descanso;
