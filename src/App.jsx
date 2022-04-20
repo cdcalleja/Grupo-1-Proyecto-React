@@ -21,11 +21,7 @@ Footer (Berta) */}
       {/* <Header/> */}
       
       <NavBar/>
-      <Descanso/>
-      <Descanso/>
-      <Descanso/>
-      <Descanso/>
-            
+      <Descanso/>            
     </div>
   );
 }
