@@ -1,6 +1,6 @@
-main-footer{
+.main-footer{
     color: white;
-    background-color: #1E90FF;
+    background-color: #dc3545;
     padding-top: 3em;
     position: relative;
     bottom: 0;
@@ -8,7 +8,6 @@ main-footer{
 }
 .page-container{
 display: flex;
-flex-direction: column;
 min-height: 100vh;
 }
 .content-wrap{
