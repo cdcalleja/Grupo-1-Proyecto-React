@@ -1,9 +1,13 @@
-import Banner from "./components/Banner";
-import { Carousel } from 'react-bootstrap/Carousel';
+import Banner from "./components/Banner/Banner";
+import CarouselM from "./components/CarouselM/CarouselM" ;
+import SectionM from "./components/SectionM/SectionM";
+
 function App() {
   return (
     <div>
-<Banner></Banner>
+<Banner/>
+<CarouselM/>
+<SectionM/>
     </div>
   );
 }
