@@ -1,7 +1,7 @@
 import Details from "./components/Detalles/Details";
 import Products from "./components/Productos/Products";
 import ModoOscuro from "./components/Darktheme/ModoOscuro";
-
+import Productos from "./components/Productos/Productos";
 
 
 
@@ -11,6 +11,8 @@ function App() {
     <div>
       <ModoOscuro></ModoOscuro>
       <Products></Products>
+      <br /><br />
+      <Productos></Productos>
       <br /><br /><br />
       <Details></Details>
   

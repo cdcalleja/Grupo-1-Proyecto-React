@@ -2,9 +2,12 @@ import React, { Component } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Container, Col, Card, Button } from "react-bootstrap";
+import { Container, Col, Card, } from "react-bootstrap";
 import '../Productos/products.css'
 import { ofertasDB } from "../../data/ofertas";
+
+import Emergente from "../Emergente/Emergente";
+
 
 function SampleNextArrow(props) {
     const { className, style, onClick } = props;
@@ -27,6 +30,11 @@ function SamplePrevArrow(props) {
         />
     );
 }
+
+
+
+
+
 
 
 export default class Responsive extends Component {
@@ -77,27 +85,29 @@ export default class Responsive extends Component {
                 <br />
                 <Container>
                     <Slider {...settings}>
-                {
-                    ofertasDB.map((e, index) => (
-                        <Col xs={12} md={4} lg={2} key= {index}>
-                            <Card className="text-center shadow m-2 m-md-1"style={{boxSizing: "content-box"}}>
-                                <Card.Body >
-                                    <Card.Title>{e.name}</Card.Title>
-                                    <Card.Img variant="top" src={e.img} />
-                                    <span className="price-old">{e.priceold}</span>
-                                    <br></br>
-                                    <span className="price-offer">{e.pricenew}</span>
-                                    <span className="price-name">     {e.promo}</span>
-                                    <br />
-                                    <span className= "cuotas"> Pagalo en 6 cuotas sin interés con Visa, Mastercard o American Express bancaria.</span>
-                                    <br />
-                                    <Button variant="secondary">Comprar</Button>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                    ))
-                }
-            
+                        {
+                            
+                            ofertasDB.map(e => (
+                                <Col xs={12} md={4} lg={2} key={e.id}>
+                                    <Card className="text-center shadow m-2 m-md-1 h-100" style={{ boxSizing: "content-box" }}>
+                                        <Card.Body >
+                                            <Card.Title>{e.name}</Card.Title>
+                                            <Card.Img variant="top" src={e.img} />
+                                            <span className="price-old">{e.priceold}</span>
+                                            <br></br>
+                                            <span className="price-offer">{e.pricenew}</span>
+                                            <span className="price-name">     {e.promo}</span>
+                                            <br />
+                                            <span className="cuotas"> Pagalo en 6 cuotas sin interés con Visa, Mastercard o American Express bancaria.</span>
+                                            <br />
+
+                                        <Emergente></Emergente>
+                                        </Card.Body>
+                                    </Card>
+                                </Col>
+                            ))
+                        }
+
                     </Slider>
                 </Container>
             </Container>
