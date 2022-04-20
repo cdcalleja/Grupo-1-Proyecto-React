@@ -10,10 +10,9 @@ export const Descanso = () => {
 
     const estilos = {
         width:"100%",
-        height: "500px",
+        height: "60vh",
         borderRadius: "50px",
-        padding: "20px"
-        
+        padding: "20px"        
     }
 
     return (
