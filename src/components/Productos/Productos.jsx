@@ -2,11 +2,11 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Container, Col, Card, Button, Modal } from "react-bootstrap";
+import { Container, Col, Card} from "react-bootstrap";
 import '../Productos/products.css'
 import { ofertasDB } from "../../data/ofertas";
 import Emergente from "../Emergente/Emergente";
-import { useState } from 'react';
+// import { useState } from 'react';
 
 
 function SampleNextArrow(props) {
@@ -35,15 +35,6 @@ function SamplePrevArrow(props) {
 
 
 const Productos = () => {
-
-    const [show, setShow] = useState(false);
-
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
-
-    const [contador, setContador] = useState(0);
-    const sumar = () => setContador(contador + 1);
-    const restar = () => setContador(contador - 1);
 
     var settings = {
         dots: true,
@@ -97,43 +88,18 @@ const Productos = () => {
                             <Col xs={12} md={4} lg={2} key={e.id}>
                                 <Card className="text-center shadow m-2 m-md-1 h-100" style={{ boxSizing: "content-box" }}>
                                     <Card.Body >
-                                        <Card.Title>{e.name}</Card.Title>
+                                        <Card.Title></Card.Title>
                                         <Card.Img variant="top" src={e.img} />
                                         <span className="price-old">{e.priceold}</span>
                                         <br></br>
-                                        <span className="price-offer">{e.pricenew}</span>
-                                        <span className="price-name">     {e.promo}</span>
+                                        <span className="price-offer">AR$ {e.pricenew}</span>
+                                        <span className="price-name"> {e.promo}</span>
                                         <br />
                                         <span className="cuotas"> Pagalo en 6 cuotas sin interés con Visa, Mastercard o American Express bancaria.</span>
                                         <br />
 
-                                        <Emergente></Emergente>
-                                        <Button variant="primary" onClick={handleShow}>
-                                            Detalles
-                                        </Button>
-                                        {
-                                            <Modal show={show} onHide={handleClose}>
-                                                <Modal.Header closeButton>
-                                                    <Modal.Title>Compras</Modal.Title>
-                                                </Modal.Header>
-                                                <Modal.Body>
-                                                    <Button onClick={sumar}> + </Button>
-                                                    <span>  {contador} {e.pricenew}</span>
-                                                    <span> {e.name} </span>
-                                                    <Button onClick={restar}> - </Button>
-
-                                                </Modal.Body>
-                                                <Modal.Footer>
-                                                    <Button variant="secondary" onClick={handleClose}>
-                                                        Cerrar
-                                                    </Button>
-                                                    <Button variant="primary" onClick={handleClose}>
-                                                        Agregar al carrito
-                                                    </Button>
-                                                </Modal.Footer>
-                                            </Modal>
-
-                                        }
+                                        <Emergente name= {e.name} pricenew={e.pricenew}/>
+                                        
                                     </Card.Body>
                                 </Card>
                             </Col>
