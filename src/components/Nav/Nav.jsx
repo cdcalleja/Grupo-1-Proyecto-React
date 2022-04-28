@@ -7,13 +7,12 @@ import Logo from './img/Logo6.png'
 import { Navbar, Container, NavDropdown, Nav } from "react-bootstrap"
 
 
-const NavBar = () => {
+const NavBar = (props) => {
 
   const styles = {
     fontSize: "25px",
     textTransform: "capitalize",
     fontFamily: "cursive",
-
   }
 
   return (
@@ -28,13 +27,15 @@ const NavBar = () => {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mx-auto" style={styles}>
             <NavDropdown title="Clothes" id="collasible-nav-dropdown" >
-              <NavDropdown.Item href="#action/3.1">men</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">women</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">kids</NavDropdown.Item>
-              </NavDropdown>
-            <Nav.Link className="mx-4" href="#accesories">accesories</Nav.Link>
-            <Nav.Link className="mx-4" href="#outlet">otulet</Nav.Link>
-            <Nav.Link className="mx-4" href="#about us">about us</Nav.Link>
+              {props.seccion.map(section => {
+                return (<NavDropdown.Item href="#action/3.1" key={section.id}>{section.section}</NavDropdown.Item>
+                )
+              })}
+            </NavDropdown>
+            {props.seccion2.map(section => {
+              return (<Nav.Link className="mx-4" href="#accesories" key={section.id}>{section.section}</Nav.Link>
+              )
+            })}
           </Nav>
           <Nav style={styles}>
             <Nav.Link href="#deets">
@@ -42,13 +43,13 @@ const NavBar = () => {
             </Nav.Link>
             <Nav.Link href="#deets">
               <FontAwesomeIcon
-              style={{ border: "1px solid black", borderRadius: "50%", padding: "10px" }}
-               icon={faUser} />
+                style={{ border: "1px solid black", borderRadius: "50%", padding: "10px" }}
+                icon={faUser} />
             </Nav.Link>
             <Nav.Link href="#deets">
-              <FontAwesomeIcon 
-              style={{ border: "1px solid black", borderRadius: "50%", padding: "10px" }} 
-              icon={faCartShopping} />
+              <FontAwesomeIcon
+                style={{ border: "1px solid black", borderRadius: "50%", padding: "10px" }}
+                icon={faCartShopping} />
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

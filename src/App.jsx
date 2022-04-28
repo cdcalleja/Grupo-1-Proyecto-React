@@ -1,26 +1,29 @@
-// import Nav from "./components/Nav/Nav.jsx";
 import NavBar from "./components/Nav/Nav.jsx";
-import { Descanso } from "./components/Descanso/Descanso.jsx";
+import Descanso from "./components/Descanso/Descanso.jsx";
 
 
 function App() {
+
+  const principales = [
+    { id: 1, section: 'accesories' },
+    { id: 2, section: 'outlet' },
+    { id: 3, section: 'abount us' }
+  ]
+
+  const secundarias = [
+    { id: 1, section: 'men' },
+    { id: 2, section: 'women' },
+    { id: 3, section: 'kids' }
+  ] 
+
   return (
     <div>
-{/* ToDoList
-Navbar (Rodrigo)
-Hero / Banner (Mileidy)
-Productos (Christian)
-Detalles / particularidades (Christian)
-Seccion -> Detalles e imágenes (Santiago)
-Seccion -> Detalles e imágenes 2 (Mileidy)
-Descanso (Rodrigo)
-Carousel (Santiago)
-Redes (Berta)
-Footer (Berta) */}
       
       {/* <Header/> */}
       
-      <NavBar/>
+      <NavBar seccion = {secundarias} 
+              seccion2 = {principales}/>
+
       <Descanso/>            
     </div>
   );
