@@ -1,19 +1,11 @@
-
+import Seccion1 from "./components/Seccion1/Seccion1";
+import CarouselS from "./components/CarouselS/CarouselS";
 
 function App() {
   return (
     <div>
-{/* ToDoList
-Navbar (Rodrigo)
-Hero / Banner (Mileidy)
-Productos (Christian)
-Detalles / particularidades (Christian)
-Seccion -> Detalles e imágenes (Santiago)
-Seccion -> Detalles e imágenes 2 (Mileidy)
-Descanso (Rodrigo)
-Carousel (Santiago)
-Redes (Berta)
-Footer (Berta) */}
+      <Seccion1 />
+      <CarouselS />
     </div>
   );
 }
