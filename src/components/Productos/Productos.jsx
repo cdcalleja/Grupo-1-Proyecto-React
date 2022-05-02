@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -8,8 +8,8 @@ import { ofertasDB } from "../../data/ofertas";
 import Emergente from "../Emergente/Emergente";
 import { useContext } from 'react'
 import ThemeContext from '../../context/ThemeContext';
-import { shoppingInitialState, shoppingReducer } from "../../reducers/shoppingReducer";
-import { TYPES } from "../../actions/shoppingActions";
+import shopCartContext from "../../context/ShopCartContext";
+
 
 function SampleNextArrow(props) {
     const { className, style, onClick } = props;
@@ -38,16 +38,12 @@ function SamplePrevArrow(props) {
 
 const Productos = () => {
 
-    const [state, dispatch] = useReducer(shoppingReducer, shoppingInitialState);
+ 
 
     const {theme} = useContext(ThemeContext)
+    const {add} = useContext(shopCartContext)
 
-
-    const addToCart = (id) => { 
-        console.log(id);
-        dispatch({type: TYPES.ADD_TO_CART, payload: id})
-
-    }
+   
 
     var settings = {
         dots: true,
@@ -113,7 +109,7 @@ const Productos = () => {
                                         <span className="cuotas"> Pagalo en 6 cuotas sin interés con Visa, Mastercard o American Express bancaria.</span>
                                         <br />
 
-                                        <Emergente name= {e.name} pricenew={e.pricenew} addToCart={addToCart} id={e.id} payload/>
+                                        <Emergente name= {e.name} pricenew={e.pricenew} id={e.id} add = {add}/>
                                         
                                     </Card.Body>
                                 </Card>

@@ -11,6 +11,7 @@ import "./app.css";
 import { ThemeProvider } from "./context/ThemeContext.js";
 import { LanguajeProvider } from "./context/LanguajeContext.js";
 import { AuthProvider } from "./context/AuthContext.js";
+import { ShopCartProvider } from "./context/ShopCartContext.js";
 
 
 
@@ -23,6 +24,7 @@ function App() {
     <div className="proyecto">
       <AuthProvider>
         <ThemeProvider>
+          <ShopCartProvider>
           <LanguajeProvider>
             <ModoOscuro />
             <NavBar/>
@@ -34,6 +36,7 @@ function App() {
             <SectionM/>
             <Footer/>
           </LanguajeProvider>
+          </ShopCartProvider>
         </ThemeProvider>
       </AuthProvider>
 

@@ -2,16 +2,18 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faMagnifyingGlass, faUser, faCartShopping } from "@fortawesome/free-solid-svg-icons"
 import Logo from './img/Logo6.png'
-import { Navbar, Container, NavDropdown, Nav } from "react-bootstrap"
+import { Navbar, Container, NavDropdown, Nav, Button } from "react-bootstrap"
 import { useContext } from 'react'
 import ThemeContext from '../../context/ThemeContext';
 import LanguajeContext from "../../context/LanguajeContext"
+import shopCartContext from "../../context/ShopCartContext"
+import Carrito from "../Carrito/Carrito"
 
 const NavBar = () => {
 
   const {theme} = useContext(ThemeContext);
   const { text } = useContext(LanguajeContext)
-
+  const {cartCount} = useContext(shopCartContext)
 
   const styles = {
     fontSize: "25px",
@@ -50,10 +52,15 @@ const NavBar = () => {
                 icon={faUser} />
             </Nav.Link>
             <Nav.Link href="#deets">
+              <Button>
               <FontAwesomeIcon
                 style={{ border: "1px solid black", borderRadius: "50%", padding: "10px" }}
                 icon={faCartShopping} />
+              </Button>
             </Nav.Link>
+            
+            <Carrito/>
+            
           </Nav>
         </Navbar.Collapse>
       </Container>
