@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useReducer } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -6,8 +6,10 @@ import { Container, Col, Card} from "react-bootstrap";
 import '../Productos/products.css'
 import { ofertasDB } from "../../data/ofertas";
 import Emergente from "../Emergente/Emergente";
-// import { useState } from 'react';
-
+import { useContext } from 'react'
+import ThemeContext from '../../context/ThemeContext';
+import { shoppingInitialState, shoppingReducer } from "../../reducers/shoppingReducer";
+import { TYPES } from "../../actions/shoppingActions";
 
 function SampleNextArrow(props) {
     const { className, style, onClick } = props;
@@ -36,6 +38,17 @@ function SamplePrevArrow(props) {
 
 const Productos = () => {
 
+    const [state, dispatch] = useReducer(shoppingReducer, shoppingInitialState);
+
+    const {theme} = useContext(ThemeContext)
+
+
+    const addToCart = (id) => { 
+        console.log(id);
+        dispatch({type: TYPES.ADD_TO_CART, payload: id})
+
+    }
+
     var settings = {
         dots: true,
         infinite: true,
@@ -47,7 +60,7 @@ const Productos = () => {
         prevArrow: <SamplePrevArrow />,
         responsive: [
             {
-                breakpoint: 1600,
+                breakpoint: 1024,
                 settings: {
                     slidesToShow: 3,
                     slidesToScroll: 3,
@@ -77,6 +90,8 @@ const Productos = () => {
         ]
     };
     return (
+
+        <div className={theme}>
         <Container fluid>
             <h2 className="tituloofertas"> Ofertas </h2>
             <br />
@@ -98,7 +113,7 @@ const Productos = () => {
                                         <span className="cuotas"> Pagalo en 6 cuotas sin interés con Visa, Mastercard o American Express bancaria.</span>
                                         <br />
 
-                                        <Emergente name= {e.name} pricenew={e.pricenew}/>
+                                        <Emergente name= {e.name} pricenew={e.pricenew} addToCart={addToCart} id={e.id} payload/>
                                         
                                     </Card.Body>
                                 </Card>
@@ -109,6 +124,7 @@ const Productos = () => {
                 </Slider>
             </Container>
         </Container>
+        </div>
     );
 
 

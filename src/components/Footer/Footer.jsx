@@ -2,9 +2,17 @@ import "./footer.css";
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { useContext } from 'react'
+import ThemeContext from '../../context/ThemeContext';
+
 
 const Footer = () => {
+
+    const { theme } = useContext(ThemeContext)
+
 return (
+
+    <div className={theme}>
     <div className="main-footer">
     <div className="container">
     <div className="row">
@@ -50,6 +58,7 @@ return (
         </div>
     </div>
 </div>
+    </div>
 );
 };
 export default Footer;

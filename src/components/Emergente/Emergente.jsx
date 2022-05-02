@@ -1,22 +1,19 @@
-import React from 'react'
+
 import { Modal, Button, Container, Row, Col } from 'react-bootstrap'
-import { useState } from 'react';
+import {  useState } from 'react';
 
-
-
-
-const Emergente = ({ name, pricenew }) => {
-
+const Emergente = ({ id, name, pricenew, addToCart}) => {
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-
     const [contador, setContador] = useState(1);
     const sumar = () => setContador(contador + 1);
     const restar = () => setContador(contador - 1);
+    let price = pricenew;
 
-    let price =  pricenew ;
+
+
 
 
     return (
@@ -26,55 +23,51 @@ const Emergente = ({ name, pricenew }) => {
                 Detalles
             </Button>
             {
-                <Modal show={show} onHide={handleClose}>
-                    <Modal.Header closeButton>
-                        <Modal.Title>{name}</Modal.Title>
+                <Modal show={show} onHide={handleClose} >
+                    <Modal.Header closeButton >
+                        <Modal.Title >{name}</Modal.Title>
                     </Modal.Header>
-                    <Modal.Body>
-                        <Container>
-                            <Row>
-                                <Col lg={4}>
+                    <Modal.Body >
+                        <Container >
+                            <Row >
+                                <Col lg={4} >
                                     Cantidad
                                 </Col>
-                                <Col lg={4}>
+                                <Col lg={4} >
                                     Precio Unitario
                                 </Col>
-                                <Col lg={4}>
+                                <Col lg={4} >
                                     Precio Total
                                 </Col>
                             </Row>
 
-                            <Row>
-                                <Col lg={4}>
-                                    <Button onClick={restar}> - </Button>
-                                    <span>  {contador} </span>
+                            <Row >
+                                <Col lg={4} >
+                                    {contador === 0 ? <Button disabled> - </Button> : <Button onClick={restar}> - </Button>}
+                                    <span >  {contador} </span>
                                     <Button onClick={sumar}> + </Button>
+                                    {/* <Button onClick={restar}> - </Button> */}
                                 </Col>
-                                <Col lg={4}>
-                                    <span>{pricenew}</span>
+                                <Col lg={4} >
+                                    <span >{pricenew}</span>
                                 </Col>
-                                <Col lg={4}>
-                                    <span>{price*contador}</span>
+                                <Col lg={4} >
+                                    <span >{price * contador}</span>
                                 </Col>
                             </Row>
                         </Container>
                     </Modal.Body>
-                    <Modal.Footer>
+                    <Modal.Footer >
                         <Button variant="secondary" onClick={handleClose}>
                             Cerrar
                         </Button>
-                        <Button variant="primary" onClick={handleClose}>
+                        <Button variant="primary" key={id} onClick={() => addToCart(id)}>
                             Agregar al carrito
                         </Button>
                     </Modal.Footer>
                 </Modal>
-
             }
-
-
         </>
-
-
     )
 }
 

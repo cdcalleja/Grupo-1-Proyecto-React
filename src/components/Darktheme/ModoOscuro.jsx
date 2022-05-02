@@ -1,72 +1,117 @@
-
-
+import { Button, Modal } from 'react-bootstrap'
+import { useReducer, useState } from 'react';
+import { useContext } from 'react'
+import ThemeContext from '../../context/ThemeContext';
+import LanguajeContext from '../../context/LanguajeContext';
+import AuthContext from '../../context/AuthContext';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
-import "./darktheme.css";
-import { useState } from "react";
+import { faSun, faMoon, faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import { shoppingInitialState, shoppingReducer } from '../../reducers/shoppingReducer';
+import CartItems from '../CartItems/CartItems';
 
 
 
 const ModoOscuro = () => {
-    //   const toggleBtn = document.querySelector(".toggle-btn");
-    const html = document.documentElement;
-    const moon = <FontAwesomeIcon className="icon" icon={faMoon} />;
-    const sun = <FontAwesomeIcon className="icon" icon={faSun} />;
+    const [count, setCount] = useState(0);
 
-    //   Estados con useState
-    const [icon, setIcon] = useState(sun);
-    const [darkMode, setDarkMode] = useState(false);
+    const [state, dispatch] = useReducer(shoppingReducer, shoppingInitialState);
+    const { products, cart } = state;
 
-    const darkTheme = {
-        main: "#737660",
-        secondary: "#dfcece",
-    };
-
-    const lightTheme = {
-        main: "#dfcece",
-        secondary: "#737660",
-    };
-
-    function changeTheme(themeObject) {
-        html.style.setProperty("--main-clr", themeObject.main);
-        html.style.setProperty("--secondary-clr", themeObject.secondary);
-        // toggleBtn.innerHTML = icon;   -> Evitar
-
-        // Esto me cambia el icono segun el true o false de darkMode
-        if (darkMode) {
-            setIcon(sun);
-            setDarkMode(false);
-        } else {
-            setIcon(moon);
-            setDarkMode(true);
-        }
+    const [show, setShow] = useState(false);
+    const handleClose1 = () => setShow(false);
+    const handleShow1 = () => {
+        setShow(true);
+        handleAuth();
     }
 
-    function isDarkTheme() {
-        if (
-            getComputedStyle(html).getPropertyValue("--main-clr") === "#737660" &&
-            getComputedStyle(html).getPropertyValue("--secondary-clr") === "#dfcece"
-        ) {
-            return true;
-        } else return false;
-    }
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
-    //   Funcion que se le pasa al onClick del button
-    const hacerClick = () => {
-        if (isDarkTheme()) {
-            changeTheme(lightTheme, moon);
-        } else {
-            changeTheme(darkTheme, sun);
-        }
-    };
+    const { theme, handleTheme } = useContext(ThemeContext)
+    const { text, handleLanguage } = useContext(LanguajeContext)
+    const { auth, handleAuth } = useContext(AuthContext)
+
+
+
+    const delFromCart = () => { }
+
+    const clearCart = () => { }
 
     return (
-        <div className="darktheme">
-            <button className="toggle-btn" onClick={hacerClick}>
-                {icon}
-            </button>
-        </div>
-    );
-};
+        <header className={theme}>
+            <div>
+                {/* <Button onClick={handleShow1} >
+                    {auth ? text.buttonLogout : text.buttonLogin}
 
-export default ModoOscuro;
+                    {
+                        <Modal show={show} onHide={handleClose1} style={{ paddingTop: "80px" }}>
+                            <Modal.Header closeButton >
+                                <Modal.Title ></Modal.Title>
+                            </Modal.Header>
+                            <Modal.Body >
+                                {auth ? text.mainWelcome : text.headerTittle}
+                            </Modal.Body>
+                            <Modal.Footer >
+                                <Button variant="secondary" onClick={handleClose1}>
+                                    {text.buttonInfo}
+                                </Button>
+                            </Modal.Footer>
+                        </Modal>
+                    }
+                </Button> */}
+                <select name="languaje" onChange={handleLanguage}>
+                    <option value="es">ES</option>
+                    <option value="en">EN</option>
+                </select>
+                <button onClick={handleTheme} style={{ backgroundColor: "transparent", border: "none", marginLeft: "100px" }}>
+                    {theme === "light" ? (<FontAwesomeIcon className="icon" icon={faSun} />) :
+                        (<FontAwesomeIcon className="icon" icon={faMoon} />)
+                    }
+                </button>
+
+                <div>
+                    <Button className="position-relative" variant="primary" onClick={handleShow}>
+                        <FontAwesomeIcon
+                            style={{ border: "1px solid black", borderRadius: "50%", padding: "10px" }}
+                            icon={faCartShopping} />
+                        {count > 0 &&
+                            <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                {count}
+                                <span className="visually-hidden">unread messages</span>
+                            </span>
+                            
+                        }
+                    </Button>
+                    {
+                        <Modal show={show} onHide={handleClose}>
+                            <Modal.Header closeButton>
+                                <Modal.Title>Tu compra</Modal.Title>
+                            </Modal.Header>
+                            <Modal.Body>
+                           fafa {
+                                    cart.map((item, index) => <CartItems key={index} value={item} delFromCart={delFromCart}/>)
+                                    } 
+                            </Modal.Body>
+                            <Modal.Footer>
+                                <Button variant="secondary" onClick={handleClose}>
+                                    Cerrar
+                                </Button>
+                                <Button variant="primary" onClick={clearCart}>
+                                    Limpiar carrito
+                                </Button>
+                                <Button variant="primary" onClick={handleClose}>
+                                    Finalizar compra
+                                    
+                                </Button>
+
+                            </Modal.Footer>
+                        </Modal>
+                    }
+                </div>
+
+            </div>
+        </header>
+    )
+}
+
+export default ModoOscuro

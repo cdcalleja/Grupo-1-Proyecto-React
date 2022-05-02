@@ -7,19 +7,36 @@ import Banner from "./components/Banner/Banner";
 import CarouselM from "./components/CarouselM/CarouselM";
 import SectionM from "./components/SectionM/SectionM";
 import Footer from "./components/Footer/Footer";
+import "./app.css";
+import { ThemeProvider } from "./context/ThemeContext.js";
+import { LanguajeProvider } from "./context/LanguajeContext.js";
+import { AuthProvider } from "./context/AuthContext.js";
+
+
+
+
 
 function App() {
+
   return (
-    <div>
-      <ModoOscuro />
-      <NavBar />
-      <Descanso />
-      <Banner />
-      <Productos />
-      <Details />
-      <CarouselM />
-      <SectionM />
-      <Footer />
+
+    <div className="proyecto">
+      <AuthProvider>
+        <ThemeProvider>
+          <LanguajeProvider>
+            <ModoOscuro />
+            <NavBar/>
+            <Descanso/>
+            <Banner/>
+            <Productos/>
+            <Details/>
+            <CarouselM/>
+            <SectionM/>
+            <Footer/>
+          </LanguajeProvider>
+        </ThemeProvider>
+      </AuthProvider>
+
     </div>
   );
 }

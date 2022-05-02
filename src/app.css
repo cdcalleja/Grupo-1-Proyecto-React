@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.proyecto {
+    margin: 2rem auto;
+    padding: 1rem;
+    /* width: 70%; */
+}
+
+
+.light {
+    background-color: #ccc;
+}
+.dark {
+    background-color: #737660;
+    
+}
+
