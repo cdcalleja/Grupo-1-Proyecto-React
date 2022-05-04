@@ -1,55 +1,76 @@
 import "./footer.css";
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebook, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faFacebook, faTwitter, faLinkedin, faInstagram, faYoutube } from "@fortawesome/free-brands-svg-icons";
+
 
 const Footer = () => {
-return (
-    <div className="main-footer">
-    <div className="container">
-    <div className="row">
-        {/* {Colum 1} */}
-        <div className="col">
-            <h4> Nosotros </h4>
-            <ul className="list-unstyled">
-            <li> Dirección</li>
-            <li> Localidad: Buenos Aires</li>
-            <li> País: Argentina</li>
-            <li> Email</li>
-            </ul>
-        </div>
-          {/* {Colum2} */}
-        <div className="col">
-            <h4>Consultas</h4>
-            <ul className="list-unstyled">
-            <li>Poductos</li>
-            <li>La empresa</li>
-            <li>Consultas Reclamos </li>
-            </ul>
-        </div>
-          {/* {Columna 3} */}
-        <div className="col">
-            <h4>Redes Sociales</h4>
-            <FontAwesomeIcon icon={faLinkedin} size="xl"/>
-            <FontAwesomeIcon icon={faFacebook} size="xl"/>
+   return (
 
-            <i className="bi bi-facebook"></i>
-            <i className="bi bi-instagram"></i>
-            <i className="bi bi-twitter"></i>
-            <i className="bi bi-youtube"></i>
-            <i className="bi bi-whatsapp"></i>
-            <i className="bi bi-chat"></i>
-        </div>
-        <hr />
-        <div className="row">
-            <p className="col-sm">
-            &copy;{new Date().getFullYear()} Nosotros | Derechos Reservados !
-            Terminos de Servicios ! Privacidad
-            </p>
-            </div>
-        </div>
-    </div>
+<footer>
+<div class="waves">
+    <div class="wave" id="wave1"></div>
+    <div class="wave" id="wave2"></div>
+    <div class="wave" id="wave3"></div>
+    <div class="wave" id="wave4"></div>
 </div>
-);
-};
-export default Footer;
+<ul class="social_icon">
+    <li><a href="/"><FontAwesomeIcon icon={faFacebook} size="xl"/></a></li>
+    <li><a href="/"><FontAwesomeIcon icon={faTwitter} size="xl"/></a></li>
+    <li><a href="/"><FontAwesomeIcon icon={faLinkedin} size="xl"/></a></li>
+    <li><a href="/"><FontAwesomeIcon icon={faInstagram} size="xl"/></a></li>
+    <li><a href="/"><FontAwesomeIcon icon={faYoutube} size="xl"/></a></li>
+</ul>
+
+
+<section>
+<div class="col1">
+<h3>Quiénes Somos</h3>
+<ul>
+<li>Empresa</li>
+<li>Estilos</li>
+<li>Nuestra Visión</li>
+<li>Nuestra Misión</li>
+</ul>
+</div>
+
+<div class="col2">
+<h3>Productos</h3>
+<ul>
+<li>Niños</li>
+<li>Mujer</li>
+<li>Hombre</li>
+<li>Accesorios</li>
+</ul>
+</div>
+
+<div class="col3">
+<h3>Servicios</h3>
+<ul>
+<li>Promociones</li>
+<li>Envíos y Cambios</li>
+<li>Seguimiento</li>
+<li>Tabla de Talles</li>
+</ul>
+</div>
+
+<div class="col4">
+<h3>Contacto</h3>
+<ul>
+<li>Locales</li>
+<li>Dirección</li>
+<li>Representaciones</li>
+<li>Otros</li>
+</ul>
+</div>
+</section>
+<p>  2022 | Derechos Reservados !
+        Terminos de Servicios ! Privacidad
+</p>
+
+</footer> 
+   )
+}
+
+export default Footer
+
