@@ -64,8 +64,8 @@ const Footer = () => {
 </ul>
 </div>
 </section>
-<p>  2022 | Derechos Reservados !
-        Terminos de Servicios ! Privacidad
+<p>  2022 | Derechos Reservados |
+        Terminos de Servicios | Privacidad
 </p>
 
 </footer> 
