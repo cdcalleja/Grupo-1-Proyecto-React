@@ -3,9 +3,9 @@ import { Modal, Button, Container, Row, Col } from 'react-bootstrap'
 import {  useContext, useState } from 'react';
 import shopCartContext from '../../context/ShopCartContext';
 
-const Emergente = ({name, pricenew}) => {
+const Emergente = ({id, name, pricenew}) => {
     const [show, setShow] = useState(false);
-    const {add} = useContext(shopCartContext)
+    const {addItem} = useContext(shopCartContext)
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -20,7 +20,7 @@ const Emergente = ({name, pricenew}) => {
     return (
         <>
 
-            <Button variant="primary" onClick={handleShow}>
+            <Button onClick={handleShow} style={{backgroundColor: "orange"}}>
                 Detalles
             </Button>
             {
@@ -62,7 +62,7 @@ const Emergente = ({name, pricenew}) => {
                         <Button variant="secondary" onClick={handleClose}>
                             Cerrar
                         </Button>
-                        <Button variant="primary" onClick={add}>
+                        <Button variant="primary" onClick={() => addItem({id: id, name: name, pricenew: pricenew})}>
                             Agregar al carrito
                         </Button>
                     </Modal.Footer>

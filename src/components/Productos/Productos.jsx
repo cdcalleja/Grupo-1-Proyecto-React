@@ -2,13 +2,13 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Container, Col, Card} from "react-bootstrap";
+import { Container, Col, Card } from "react-bootstrap";
 import '../Productos/products.css'
-import { ofertasDB } from "../../data/ofertas";
+// import { ofertasDB } from "../../data/ofertas";
 import Emergente from "../Emergente/Emergente";
-import { useContext } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import ThemeContext from '../../context/ThemeContext';
-import shopCartContext from "../../context/ShopCartContext";
+import axios from "axios";
 
 
 function SampleNextArrow(props) {
@@ -34,16 +34,22 @@ function SamplePrevArrow(props) {
 }
 
 
-
-
 const Productos = () => {
 
- 
+    const { theme } = useContext(ThemeContext)
 
-    const {theme} = useContext(ThemeContext)
-    const {add} = useContext(shopCartContext)
+    const [data, setData] = useState([]);
 
-   
+    useEffect(() => {
+        axios('http://localhost:4000/ofertas').then(res => {
+            setData(res.data)
+        })
+    }, [])
+
+
+// instalar json server: npm install -g json-server
+// instalar axios -> package.json -> dependencies -> agregar axios - autoimportar - npm i
+    // json-server --watch data.json --port 4000
 
     var settings = {
         dots: true,
@@ -87,40 +93,76 @@ const Productos = () => {
     };
     return (
 
-        <div className={theme}>
-        <Container fluid>
-            <h2 className="tituloofertas"> Ofertas </h2>
-            <br />
-            <Container>
-                <Slider {...settings}>
-                    {
+        <>
+            <div className={theme}>
+                <Container fluid>
+                    <h2 className="tituloofertas"> Ofertas </h2>
+                    <br />
+                    <Container>
+                        <Slider {...settings}>
+                            {
+                                data.map((item) => {
+                                    return (
+                                        <Col xs={12} md={4} lg={2} key={item.id}>
+                                            <Card className="text-center shadow m-2 m-md-1 h-100" style={{ boxSizing: "content-box" }}>
+                                                <Card.Body >
+                                                    <Card.Title></Card.Title>
+                                                    <Card.Img variant="top" src={item.img} />
+                                                    <span className="price-old">{item.priceold}</span>
+                                                    <br></br>
+                                                    <span className="price-offer">AR$ {item.pricenew}</span>
+                                                    <span className="price-name"> {item.promo}</span>
+                                                    <br />
+                                                    <span className="cuotas"> Pagalo en 6 cuotas sin interés con Visa, Mastercard o American Express bancaria.</span>
+                                                    <br />
 
-                        ofertasDB.map(e => (
-                            <Col xs={12} md={4} lg={2} key={e.id}>
-                                <Card className="text-center shadow m-2 m-md-1 h-100" style={{ boxSizing: "content-box" }}>
-                                    <Card.Body >
-                                        <Card.Title></Card.Title>
-                                        <Card.Img variant="top" src={e.img} />
-                                        <span className="price-old">{e.priceold}</span>
-                                        <br></br>
-                                        <span className="price-offer">AR$ {e.pricenew}</span>
-                                        <span className="price-name"> {e.promo}</span>
-                                        <br />
-                                        <span className="cuotas"> Pagalo en 6 cuotas sin interés con Visa, Mastercard o American Express bancaria.</span>
-                                        <br />
+                                                    <Emergente name={item.name} pricenew={item.pricenew} id={item.id} />
 
-                                        <Emergente name= {e.name} pricenew={e.pricenew} id={e.id} add = {add}/>
-                                        
-                                    </Card.Body>
-                                </Card>
-                            </Col>
-                        ))
-                    }
+                                                </Card.Body>
+                                            </Card>
+                                        </Col>
+                                    )
+                                })
+                            }
+                        </Slider>
+                    </Container>
+                </Container>
+            </div>
+            {/* <div className={theme}>
+                <Container fluid>
+                    <h2 className="tituloofertas"> Ofertas </h2>
+                    <br />
+                    <Container>
+                        <Slider {...settings}>
+                            {
 
-                </Slider>
-            </Container>
-        </Container>
-        </div>
+                                ofertasDB.map(e => (
+                                    <Col xs={12} md={4} lg={2} key={e.id}>
+                                        <Card className="text-center shadow m-2 m-md-1 h-100" style={{ boxSizing: "content-box" }}>
+                                            <Card.Body >
+                                                <Card.Title></Card.Title>
+                                                <Card.Img variant="top" src={e.img} />
+                                                <span className="price-old">{e.priceold}</span>
+                                                <br></br>
+                                                <span className="price-offer">AR$ {e.pricenew}</span>
+                                                <span className="price-name"> {e.promo}</span>
+                                                <br />
+                                                <span className="cuotas"> Pagalo en 6 cuotas sin interés con Visa, Mastercard o American Express bancaria.</span>
+                                                <br />
+
+                                                <Emergente name={e.name} pricenew={e.pricenew} id={e.id} />
+
+                                            </Card.Body>
+                                        </Card>
+                                    </Col>
+                                ))
+                            }
+
+                        </Slider>
+                    </Container>
+                </Container>
+            </div> */}
+        </>
     );
 
 

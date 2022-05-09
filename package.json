@@ -19,7 +19,8 @@
     "react-slick": "^0.28.1",
     "slick-carousel": "^1.8.1",
     "use-local-storage": "^2.3.6",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "axios": "0.27.2"
   },
   "scripts": {
     "start": "react-scripts start",

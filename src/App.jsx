@@ -17,7 +17,10 @@ import { ShopCartProvider } from "./context/ShopCartContext.js";
 
 
 
+
 function App() {
+
+
 
   return (
 
