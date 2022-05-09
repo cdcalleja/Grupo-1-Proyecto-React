@@ -128,40 +128,6 @@ const Productos = () => {
                     </Container>
                 </Container>
             </div>
-            {/* <div className={theme}>
-                <Container fluid>
-                    <h2 className="tituloofertas"> Ofertas </h2>
-                    <br />
-                    <Container>
-                        <Slider {...settings}>
-                            {
-
-                                ofertasDB.map(e => (
-                                    <Col xs={12} md={4} lg={2} key={e.id}>
-                                        <Card className="text-center shadow m-2 m-md-1 h-100" style={{ boxSizing: "content-box" }}>
-                                            <Card.Body >
-                                                <Card.Title></Card.Title>
-                                                <Card.Img variant="top" src={e.img} />
-                                                <span className="price-old">{e.priceold}</span>
-                                                <br></br>
-                                                <span className="price-offer">AR$ {e.pricenew}</span>
-                                                <span className="price-name"> {e.promo}</span>
-                                                <br />
-                                                <span className="cuotas"> Pagalo en 6 cuotas sin interés con Visa, Mastercard o American Express bancaria.</span>
-                                                <br />
-
-                                                <Emergente name={e.name} pricenew={e.pricenew} id={e.id} />
-
-                                            </Card.Body>
-                                        </Card>
-                                    </Col>
-                                ))
-                            }
-
-                        </Slider>
-                    </Container>
-                </Container>
-            </div> */}
         </>
     );
 

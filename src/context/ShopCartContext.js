@@ -20,11 +20,32 @@ const ShopCartProvider = ({children}) => {
 // de la lista de productos que desees agregar. En setCartPrice a cartPrice (que en use state lo inicializamos en 0) le vas a sumar el price new del elemento que agregaste
 
 
-    const addItem = ({id, name, pricenew}) => 
-    {setCartCount(cartCount + 1);
-     setCartInfo([...cartInfo,{id, name, pricenew}]);
-     setCartPrice (cartPrice + pricenew);
-}
+    const addItem = ({id, name, price, quantity}) => {
+        let duplicate = cartInfo.find((item) => item.id === id);
+        console.log(duplicate);
+        if (duplicate !== undefined) {
+            const indexOfDuplicate = cartInfo.findIndex((producto) => producto.id === id);
+            const newQuantity = (duplicate.quantity += quantity);
+            cartInfo.splice(indexOfDuplicate, 1, {id, name, price, quantity: newQuantity})
+            setCartPrice (cartPrice + (quantity * price));
+        } else {
+            setCartInfo([...cartInfo,{id, name, price, quantity}]);
+            setCartCount((cc)=> cc + 1);
+            // setCartCount((cc)=> cc + 1);
+            setCartPrice (cartPrice + (quantity * price));
+        }
+    }
+
+    //  const exist = cartInfo.find ((x) => x.id === id);
+    //  if (exist) {
+    //      setCartInfo(cartInfo.map ((x) => x.id === id ? {...exist, qty: exist.qty +1} : x));
+    //  } else {
+    //      setCartInfo ([...cartInfo, {...id, qty: 1}])
+    //  }
+     
+//      setCartPrice (cartPrice + pricenew);
+//      setCartInfo([...cartInfo,{id, name, pricenew}]);
+// }
 
 
 // clearCart va a tener la funcion de retornar el estado del carrito a sus valores iniciale en todas sus funciones, por ello
@@ -40,31 +61,39 @@ const ShopCartProvider = ({children}) => {
     // remove va a tener la funcion de eliminar un item del carrito (en este caso va a ser siempre el ultimo agregado), para ello de
     // cartInfo (el elemento que mapeamos en Carrito.jsx linea 56) usamos filter y pasamos id, name y pricenew desestructuradas haciendo
     // una arrowfunction que con pop elimine ese id, name y price new ultimos que se agregaron.
-    // tambien seteamos el valor
+    // tambien seteamos el valor de setCartPrice (revisar un tema que no estaria restando bien siempre)
+    // finalmente el cartCount resta en 1
+
     const remove = () => {
         cartInfo.filter (({id, name, pricenew}) => {
             cartInfo.pop (id, name, pricenew)
-            setCartPrice (0);
+            setCartPrice (cartPrice - pricenew);
             return setCartCount (cartCount - 1)
         }
         )
     }
     
- 
-    //   )} 
-    // setCartCount(cartCount - 1);
-// setCartCount(cartCount - 1);
+    // const remove = ({id}) => {
+    //     let temp = cartInfo.filter (item => item.id !== id);
+    //     setCartInfo(temp);
+    //     setCartCount (cartCount - 1) 
+    // }
+
+//     const borrarProducto = (index) => {
+//         let temporal = carrito.filter(item => item.id !== index);
+//         setCarrito(temporal);
+//         setItems(items -1)
+//     }
+// Axel Mullins19:05
+// --------------------------
+// En el componente
+// onClick={ () => borrarProducto(item.id) }
 
     
+   const data = {addItem, remove, cartCount, clearCart, cartInfo, cartPrice};
 
-    const data = {addItem, remove, cartCount, clearCart, cartInfo, cartPrice};
-
-    return (
-        <shopCartContext.Provider value={data}>{children}</shopCartContext.Provider> 
-    )
+    return (<shopCartContext.Provider value={data}>{children}</shopCartContext.Provider>)
 }
 
-export {
-    ShopCartProvider
-}
+export {ShopCartProvider}
 export default shopCartContext;

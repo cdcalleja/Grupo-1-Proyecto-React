@@ -5,7 +5,7 @@ import shopCartContext from '../../context/ShopCartContext';
 
 const Emergente = ({id, name, pricenew}) => {
     const [show, setShow] = useState(false);
-    const {addItem} = useContext(shopCartContext)
+    const {addItem  } = useContext(shopCartContext)
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -13,7 +13,6 @@ const Emergente = ({id, name, pricenew}) => {
     const sumar = () => setContador(contador + 1);
     const restar = () => setContador(contador - 1);
     let price = pricenew;
-
 
 
 
@@ -46,6 +45,7 @@ const Emergente = ({id, name, pricenew}) => {
                                 <Col lg={4} >
                                     {contador === 0 ? <Button disabled> - </Button> : <Button onClick={restar}> - </Button>}
                                     <span >  {contador} </span>
+    
                                     <Button onClick={sumar}> + </Button>
                                     {/* <Button onClick={restar}> - </Button> */}
                                 </Col>
@@ -62,7 +62,7 @@ const Emergente = ({id, name, pricenew}) => {
                         <Button variant="secondary" onClick={handleClose}>
                             Cerrar
                         </Button>
-                        <Button variant="primary" onClick={() => addItem({id: id, name: name, pricenew: pricenew})}>
+                        <Button variant="primary" onClick={() => addItem({id: id, name: name, price: pricenew, quantity : contador})}>
                             Agregar al carrito
                         </Button>
                     </Modal.Footer>

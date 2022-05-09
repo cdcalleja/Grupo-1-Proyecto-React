@@ -1,8 +1,7 @@
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import axios from "axios";
 
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { Button, Col, Container, Modal, Row } from "react-bootstrap";
 import shopCartContext from "../../context/ShopCartContext";
 
@@ -11,7 +10,7 @@ const Carrito = () => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const { cartCount, remove, clearCart, cartInfo, cartPrice } = useContext(shopCartContext)
+  const { cartCount, remove, clearCart, cartInfo, cartPrice} = useContext(shopCartContext)
 
  
 
@@ -37,17 +36,17 @@ const Carrito = () => {
 
           <Container >
             <Row >
-              <Col lg={3} >
+              <Col lg={2} >
                 Cantidad
               </Col>
-              <Col lg={3} >
+              <Col lg={4} >
                 Item
               </Col>
-              <Col lg={3} >
+              <Col lg={4} >
                 Precio Unitario
               </Col>
-              <Col lg={3} >
-                Precio Total
+              <Col lg={2} >
+                
               </Col>
             </Row>
 
@@ -56,9 +55,10 @@ const Carrito = () => {
               cartInfo.map((item) => {
                 return (
                   <Row key={item.id}>
-                    <Col lg={3}>{cartCount}</Col>
+                    <Col lg={3}>{item.quantity}</Col>
                     <Col lg={3}>{item.name}</Col>
-                    <Col lg={3}>{item.pricenew}</Col>
+                    <Col lg={3}>{item.price}</Col>
+                    {/* <Col> <Button onClick={remove}> agregar un item de tacho de basura </Button></Col> */}
                     {/* <Col lg={3}> {cartPrice}</Col> */}
                   </Row>
                 )

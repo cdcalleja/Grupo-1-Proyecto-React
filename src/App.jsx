@@ -9,8 +9,6 @@ import SectionM from "./components/SectionM/SectionM";
 import Footer from "./components/Footer/Footer";
 import "./app.css";
 import { ThemeProvider } from "./context/ThemeContext.js";
-import { LanguajeProvider } from "./context/LanguajeContext.js";
-import { AuthProvider } from "./context/AuthContext.js";
 import { ShopCartProvider } from "./context/ShopCartContext.js";
 
 
@@ -25,10 +23,9 @@ function App() {
   return (
 
     <div className="proyecto">
-      <AuthProvider>
+
         <ThemeProvider>
           <ShopCartProvider>
-          <LanguajeProvider>
             <ModoOscuro />
             <NavBar/>
             <Descanso/>
@@ -38,11 +35,8 @@ function App() {
             <CarouselM/>
             <SectionM/>
             <Footer/>
-          </LanguajeProvider>
           </ShopCartProvider>
         </ThemeProvider>
-      </AuthProvider>
-
     </div>
   );
 }
