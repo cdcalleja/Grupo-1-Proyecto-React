@@ -1,18 +1,21 @@
 import React from 'react';
 import img11 from "./img/img11.jpg";
 
+
 const Banner = () => {
   return (
-    <div>
-      <button 
-      className = "Button" style={{ width:"200px", height: "45px", top: "445px", left: "61px", borderRadius:"5px", position: "absolute", background: "orange"}}
+    <div style={{backgroundImage: `url(${img11})`, backgroundSize: "cover", backgroundPosition: "center", height: "50vh"}}>
+      <h2 style={{ width:"570px", height: "60px", fontFamily:"Cormorant", fontStyle: "normal", fontWeight:"700,Bold", fontSize:"50px", lineHeight:"61px", textAlign:"center", margin:"0px"}}>Disfruta del otoño</h2>
+      <h3 style={{ width:"570px", height: "30px", fontFamily:"Poppins", fontStyle: "normal", fontWeight:"300,Light", fontSize:"26px", lineHeight:"39px", textAlign:"center", margin:"20px"}}>descuentos en mercancia seleccionada</h3>
+      <button id='productos'
+      className = "Button" style={{ width:"200px", height: "45px", background: "orange", marginLeft:"150px", borderRadius:"5px",cursor:"pointer"
+      }}
       >
       {" "}
-      ver aqui{" "}
+      shop now{" "}
       </button>
-      <img className= "d-block w-100" src={img11} alt="" style= {{width: "1280px", height: "500px", position:"absolute", top: "185px", left: "0px"}}/>
-      <h1 style={{ width:"570px", height: "60px", top:"310px", left:"55px", position:"absolute", fontFamily:"Cormorant", fontStyle: "normal", fontWeight:"700,Bold", fontSize:"50px", lineHeight:"61px"}}>Indumentaria para Ellos</h1>
     </div>
   )
 }
+
 export default Banner

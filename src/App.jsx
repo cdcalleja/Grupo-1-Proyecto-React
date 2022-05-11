@@ -1,15 +1,16 @@
 
 import Banner from "./components/Banner/Banner";
-import CarouselM from "./components/CarouselM/CarouselM";
 import SectionM from "./components/SectionM/SectionM";
 import Footer from "./components/Footer/Footer";
+import Main from "./components/Main/Main";
 function App() {
   return (
 <div>
+<Main/>
 <Banner/>
-<CarouselM/>
 <SectionM/>
 <Footer/>
+
 </div>
 );
 }

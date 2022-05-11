@@ -5,11 +5,11 @@ const SectionM = () => {
 return (
     <div>
         <button
-            className = "Button"  style={{width: "140px", height: "45px", left: "655px", top: "3131px", borderRadius: "5px", position: "absolute", color:"orange"}}
+            className = "Button" style={{width: "140px", height: "45px", left: "655px", top: "3131px", borderRadius: "5px", position: "absolute", background:"orange"}}
             >
             {" "}
             Comprar Ahora{" "}
-        </button>
+        </button> 
         <img src={img7} alt="compras online" style={{width:"570px", height:"432px", top:"2797px", left:"55px", position: "absolute"}}/>
         <h3 style={{width:"569px", height:"97px", top: "2850px", left: "656px", fontFamily: "Cormorant", fontStyle: "normal", fontWeight:"700", fontSize: "40px", lineHeight:"48px", position:"absolute" }}>
         Compras mayores a 15.000 no tienen costo de envio</h3>
