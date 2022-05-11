@@ -3,9 +3,11 @@ import { Carousel } from 'react-bootstrap'
 import img1 from "../Descanso/img/local1.jpg"
 import img2 from "../Descanso/img/local2.jpg"
 import img3 from "../Descanso/img/local4.jpg"
-
+import { useContext } from 'react'
+import ThemeContext from '../../context/ThemeContext';
 
  const Descanso = () => {
+    const {theme} = useContext(ThemeContext)
 
 
     const estilos = {
@@ -17,7 +19,7 @@ import img3 from "../Descanso/img/local4.jpg"
 
     return (
 
-        <>
+        <div className={theme}>
 
             <Carousel>
                 <Carousel.Item interval="500">
@@ -59,7 +61,7 @@ import img3 from "../Descanso/img/local4.jpg"
                 </Carousel.Item>
             </Carousel>
 
-        </>
+        </div>
     )
 }
 

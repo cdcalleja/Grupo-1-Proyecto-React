@@ -1,19 +1,120 @@
 {
-  "posts": [
-    {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+    "ofertas": [{
+            "id": 1,
+            "name": "Campera Polar",
+            "priceold": "AR$ 10794",
+            "pricenew": 8636,
+            "promo": "promo",
+            "img": "https://i.imgur.com/RyIdgQC.jpg"
+        },
+
+        {
+            "id": 2,
+            "name": "Chaleco",
+            "priceold": "AR$ 18256",
+            "pricenew": 14604,
+            "promo": "promo",
+            "img": "https://i.imgur.com/cyylEIT.jpg"
+
+        },
+        {
+            "id": 3,
+            "name": "Camiseta Termica",
+            "priceold": "AR$ 5344",
+            "pricenew": 4275,
+            "promo": "promo",
+            "img": "https://i.imgur.com/Jlufcnc.jpg"
+
+        },
+        {
+            "id": 4,
+            "name": "Camisa",
+            "priceold": "AR$ 14277",
+            "pricenew": 11421,
+            "promo": "promo",
+            "img": "https://i.imgur.com/ww55oQG.jpg"
+
+        },
+        {
+            "id": 5,
+            "name": "Chomba",
+            "priceold": "AR$ 6686",
+            "pricenew": 5348,
+            "promo": "promo",
+            "img": "https://i.imgur.com/fv08eWY.jpg"
+
+        },
+        {
+            "id": 6,
+            "name": "Remera",
+            "priceold": "AR$ 5647",
+            "pricenew": 4517,
+            "promo": "promo",
+            "img": "https://i.imgur.com/D0eAZAa.jpg"
+
+        },
+        {
+            "id": 7,
+            "name": "Rompe Vientos",
+            "priceold": "AR$ 32339",
+            "pricenew": 25871,
+            "promo": "promo",
+            "img": "https://i.imgur.com/gK66p2h.jpg"
+
+        },
+        {
+            "id": 8,
+            "name": "Pantalon",
+            "priceold": "AR$ 18875",
+            "pricenew": 15100,
+            "promo": "promo",
+            "img": "https://i.imgur.com/eemZ37n.jpg"
+
+        },
+        {
+            "id": 9,
+            "name": "Zapatilla Running",
+            "priceold": "AR$ 20221",
+            "pricenew": 18198,
+            "promo": "promo",
+            "img": "https://i.imgur.com/qBKPTAa.jpg"
+
+        }
+    ],
+
+    "whyus": [{
+            "id": 1,
+            "h5": "Estate atento a las ultimas novedades de moda!",
+            "p": "Cuando te suscribis, recibis actualizaciones mensuales acerca de las ultimas tendencias en el mundo de la moda!",
+            "img": "https://i.imgur.com/30KX1pL.png"
+        },
+
+        {
+            "id": 2,
+            "h5":  "La mejor calidad de esta en nuestros productos!",
+            "p": "Nos preocupa el mundo y los animales, ninguno es lastimado en el proceso de la obtención de los materiales para nuestros productos.",
+            "img": "https://i.imgur.com/1iarqm0.png"
+
+        },
+        {
+            "id": 3,
+            "h5": "La mejor e-shop de ropa del mercado!",
+            "p": "Nuestros productos estan confeccionados con las mejores telas!",
+            "img": "https://i.imgur.com/tYXPMJp.png"
+
+        },
+        {
+            "id": 4,
+            "h5": "Recibi tus compras en tu casa!",
+            "p": "Compra por nuestro sitio online y recibi tus productos sin costo en tu domicilio!",
+            "img": "https://i.imgur.com/se69z1g.png"
+
+        },
+        {
+            "id": 5,
+            "h5": "Unite a nuestra membresía Vip!",
+            "p": "Sumate a nuestro club de seguidores. Suscribite para estar al tanto de nuestros nuevos productos y recibir increibles descuentos!",
+            "img": "https://i.imgur.com/W8ox943.png"
+        }
+    ]
 }
