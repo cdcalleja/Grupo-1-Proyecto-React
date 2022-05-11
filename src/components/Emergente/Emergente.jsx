@@ -1,12 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Modal, Button, Container, Row, Col } from 'react-bootstrap'
 import { useState } from 'react';
+import ShopCartContext from '../../context/shopCartContext';
 
+const Emergente = ({id, name, pricenew}) => {
 
-
-
-const Emergente = ({ name, pricenew }) => {
-
+    
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -18,7 +17,8 @@ const Emergente = ({ name, pricenew }) => {
 
     let price =  pricenew ;
 
-
+    const {addItem} = useContext(ShopCartContext)
+  
     return (
         <>
 
@@ -63,7 +63,7 @@ const Emergente = ({ name, pricenew }) => {
                         <Button variant="secondary" onClick={handleClose}>
                             Cerrar
                         </Button>
-                        <Button variant="primary" onClick={handleClose}>
+                        <Button variant="primary"  onClick={() => {addItem({ id: id, name: name, price: pricenew, quantity: contador })}} >
                             Agregar al carrito
                         </Button>
                     </Modal.Footer>
@@ -71,9 +71,7 @@ const Emergente = ({ name, pricenew }) => {
 
             }
 
-
         </>
-
 
     )
 }
