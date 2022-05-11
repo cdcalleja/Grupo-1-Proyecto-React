@@ -94,7 +94,7 @@ const Productos = () => {
     return (
 
         <>
-            <div className={theme}>
+            <div className={theme} id="productos">
                 <Container fluid>
                     <h2 className="tituloofertas"> Ofertas </h2>
                     <br />

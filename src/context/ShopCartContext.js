@@ -51,16 +51,16 @@ const ShopCartProvider = ({children}) => {
 
 
     // remove va a hacer un filter del cartInfo 
-    const remove = (index, price) => {
-        let itemToDelete = cartInfo.filter(item => item.id !== index);
-        // let priceToRest = cartInfo.filter(item => item.price === price)
+    const remove = (index) => {
+        let itemToDelete = cartInfo.filter(item => item.id !== index);        
         console.log(itemToDelete)
         setCartInfo(itemToDelete)
         setCartCount(cartCount - 1)
         // setCartPrice(cartPrice - priceToRest)
+        // setCartPrice ((prevState) => ([...cartPrice, {prevState}]))
        }
 
-       
+
 // clearCart va a tener la funcion de retornar el estado del carrito a sus valores iniciale en todas sus funciones, por ello
 // el setCartCount se setea a 0 al igual que el setCartPrice y el setCartInfo se resetea a su array vacio.
 
@@ -70,7 +70,9 @@ const ShopCartProvider = ({children}) => {
         setCartInfo([]);
     }
 
-    
+    let totalPrice = cartInfo.map((item) => totalPrice += item.price);
+
+
    const data = {addItem, remove, cartCount, clearCart, cartInfo, cartPrice};
 
     return (<shopCartContext.Provider value={data}>{children}</shopCartContext.Provider>)
