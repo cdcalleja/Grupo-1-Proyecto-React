@@ -75,7 +75,7 @@ export default class MultipleItems extends Component {
     };
 
     return (
-      <div className='sec' style={{width: "80%", margin: "auto"}}>
+      <div className='sec' style={{width: "90%", margin: "auto"}}>
         <h2>Secciones</h2>
           <Slider {...settings}>
             <div className='img'>
