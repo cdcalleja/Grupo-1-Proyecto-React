@@ -23,8 +23,10 @@ const ModoOscuro = () => {
     };
 
     const lightTheme = {
-        main: "#dfcece",
-        secondary: "#737660",
+        main: "#dfcece",       
+
+        secondary: "#737660",      
+
     };
 
     function changeTheme(themeObject) {

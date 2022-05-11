@@ -62,4 +62,8 @@ import img3 from "../Descanso/img/local4.jpg"
         </>
     )
 }
+
+
 export default Descanso;
+
+
