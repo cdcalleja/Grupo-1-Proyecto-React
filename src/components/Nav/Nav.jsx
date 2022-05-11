@@ -1,23 +1,14 @@
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-<<<<<<< HEAD
 import { faMagnifyingGlass, faMoon, faSun, faUser } from "@fortawesome/free-solid-svg-icons"
 import Logo from './img/Logo6.png'
 import { Navbar, Container, NavDropdown, Nav } from "react-bootstrap"
 import { useContext } from 'react'
 import ThemeContext from '../../context/ThemeContext';
-// import LanguajeContext from "../../context/LanguajeContext"
-=======
-import { faMagnifyingGlass, faUser } from "@fortawesome/free-solid-svg-icons"
-import Logo from './img/Logo6.png'
-import { Navbar, Container, NavDropdown, Nav } from "react-bootstrap"
 import Carrito from "./Carrito"
 import { useEffect, useState } from "react"
 import axios from "axios"
 
->>>>>>> master
-
-import Carrito from "../Carrito/Carrito"
 
 const NavBar = () => {
 
@@ -75,22 +66,12 @@ const NavBar = () => {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mx-auto" style={styles}>
             <NavDropdown title="Clothes" id="collasible-nav-dropdown" >
-<<<<<<< HEAD
-              <NavDropdown.Item href="#action/3.1">Men</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">Women</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Kids</NavDropdown.Item>
-            </NavDropdown>
-            <Nav.Link className="mx-4" href="#accesories">accesories</Nav.Link>
-            <Nav.Link className="mx-4" href="#outlet">otulet</Nav.Link>
-            <Nav.Link className="mx-4" href="#about us">about us</Nav.Link>
-=======
-              {
+               {
                 data.map((item, index) => {
                   return (
                     <NavDropdown.Item href="#action/3.1" key={index}>{item.section}</NavDropdown.Item>)
                 })
               }
-
             </NavDropdown>
             {
               data2.map((item, index) => {
@@ -99,7 +80,6 @@ const NavBar = () => {
                 )
               })
             }
->>>>>>> master
           </Nav>
           <Nav style={styles}>
             <Nav.Link href="#deets">
@@ -109,15 +89,7 @@ const NavBar = () => {
               <FontAwesomeIcon
                 style={{ border: "1px solid black", borderRadius: "50%", padding: "10px" }}
                 icon={faUser} />
-<<<<<<< HEAD
-=======
             </Nav.Link>
-            <Nav.Link href="#deets">
-              <Carrito />
->>>>>>> master
-            </Nav.Link>
-            
-            
             <Carrito/>
             <button onClick={handleTheme} style={{ backgroundColor: "transparent", border: "none", marginLeft:"50px"}}>
                     {theme === "light" ? (<FontAwesomeIcon className="icon" icon={faSun} />) :
