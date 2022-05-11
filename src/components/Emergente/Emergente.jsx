@@ -3,7 +3,11 @@ import { Modal, Button, Container, Row, Col } from 'react-bootstrap'
 import {  useContext, useState } from 'react';
 import shopCartContext from '../../context/ShopCartContext';
 
+
 const Emergente = ({id, name, pricenew}) => {
+
+    
+
     const [show, setShow] = useState(false);
     const {addItem  } = useContext(shopCartContext)
 
@@ -13,9 +17,7 @@ const Emergente = ({id, name, pricenew}) => {
     const sumar = () => setContador(contador + 1);
     const restar = () => setContador(contador - 1);
 
-
-
-
+  
     return (
         <>
 
@@ -62,14 +64,18 @@ const Emergente = ({id, name, pricenew}) => {
                         <Button variant="secondary" onClick={handleClose}>
                             Cerrar
                         </Button>
-                        <Button variant="primary" onClick={() => addItem({id: id, name: name, price: pricenew, quantity : contador})}>
+
+                        <Button variant="primary"  onClick={() => {addItem({ id: id, name: name, price: pricenew, quantity: contador })}} >
+
                             Agregar al carrito
                         </Button>
                     </Modal.Footer>
                 </Modal>
             }
+
         </>
+
     )
 }
 
-export default Emergente
+export default Emergente;

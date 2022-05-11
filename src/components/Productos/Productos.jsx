@@ -34,6 +34,7 @@ function SamplePrevArrow(props) {
 }
 
 
+
 const Productos = () => {
 
     const { theme } = useContext(ThemeContext)
@@ -93,6 +94,7 @@ const Productos = () => {
     };
     return (
 
+
         <>
             <div className={theme} id="productos">
                 <Container fluid>
@@ -118,6 +120,7 @@ const Productos = () => {
 
                                                     <Emergente name={item.name} pricenew={item.pricenew} id={item.id} />
 
+
                                                 </Card.Body>
                                             </Card>
                                         </Col>
@@ -134,4 +137,4 @@ const Productos = () => {
 
 }
 
-export default Productos
+export default Productos;
