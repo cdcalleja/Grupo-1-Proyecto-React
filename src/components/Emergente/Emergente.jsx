@@ -12,7 +12,7 @@ const Emergente = ({id, name, pricenew}) => {
     const [contador, setContador] = useState(1);
     const sumar = () => setContador(contador + 1);
     const restar = () => setContador(contador - 1);
-    let price = pricenew;
+
 
 
 
@@ -53,7 +53,7 @@ const Emergente = ({id, name, pricenew}) => {
                                     <span >{pricenew}</span>
                                 </Col>
                                 <Col lg={4} >
-                                    <span >{price * contador}</span>
+                                    <span >{pricenew * contador}</span>
                                 </Col>
                             </Row>
                         </Container>

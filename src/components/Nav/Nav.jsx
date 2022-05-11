@@ -1,6 +1,6 @@
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faMagnifyingGlass, faUser } from "@fortawesome/free-solid-svg-icons"
+import { faMagnifyingGlass, faMoon, faSun, faUser } from "@fortawesome/free-solid-svg-icons"
 import Logo from './img/Logo6.png'
 import { Navbar, Container, NavDropdown, Nav } from "react-bootstrap"
 import { useContext } from 'react'
@@ -11,7 +11,7 @@ import Carrito from "../Carrito/Carrito"
 
 const NavBar = () => {
 
-  const {theme} = useContext(ThemeContext);
+  const {theme, handleTheme} = useContext(ThemeContext);
   // const { text } = useContext(LanguajeContext)
  
 
@@ -27,6 +27,7 @@ const NavBar = () => {
     <div className={theme}>
     <Navbar className="shadow" sticky="top" collapseOnSelect expand="lg" bg="light" variant="light" style={{ borderRadius: "20px" }}>
       <Container className="d-flex p-2">
+        {/* fijate aca de cambiarle el className a un fluid */}
         <Navbar.Brand href="#home">
           <img src={Logo} alt="logo" style={{ width: "60px" }} />
         </Navbar.Brand>
@@ -51,11 +52,14 @@ const NavBar = () => {
                 style={{ border: "1px solid black", borderRadius: "50%", padding: "10px" }}
                 icon={faUser} />
             </Nav.Link>
-            <Nav.Link href="#deets">
-            </Nav.Link>
+            
             
             <Carrito/>
-            
+            <button onClick={handleTheme} style={{ backgroundColor: "transparent", border: "none", marginLeft:"50px"}}>
+                    {theme === "light" ? (<FontAwesomeIcon className="icon" icon={faSun} />) :
+                        (<FontAwesomeIcon className="icon" icon={faMoon} />)
+                    }
+                </button>
           </Nav>
         </Navbar.Collapse>
       </Container>

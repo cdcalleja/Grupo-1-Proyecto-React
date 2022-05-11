@@ -14,11 +14,23 @@ const ShopCartProvider = ({children}) => {
     const [cartPrice, setCartPrice] = useState(0)
 
 
-//    Additem realiza lo siguiente: primero pasas desestructurando el id, el nombre y el precio del los productos que vas a mapear con
-// posterioridad en el componente carrito (ver linea 56 de Carrito.jsx) entonces, seteas el contador de items del carrito sumandole uno al valor
-// inicial del useState de 0, en cartInfo haces spread operator (...) de cartInfo para que posteriormente agregue el id, name y pricenew del elemento 
-// de la lista de productos que desees agregar. En setCartPrice a cartPrice (que en use state lo inicializamos en 0) le vas a sumar el price new del elemento que agregaste
-
+// Add item va a cumplir varias funciones: se le pasa desestructuring los parametros que queres usar en este caso id, name, price y quantity
+// estos parametros vienen dados de la linea 65 del componente emergente que a su vez recibe id, pricenew y name del componente padre (productos),
+// donde se realiza el mapeo de la lista a mostrar en el slider, mientras que quantity se equipara en la misma linea al contador de cantidad de items.
+// dentro del addItem generamos una variable (duplicate) que va a hacer un find al cartInfo (el state que es lo que agrega los items al carrito que se inicializa como array vacio)
+// que va a buscar todos los id de los items que se repitan y guardarlos en la variable dudplicate.
+// realizamos un if que si duplicate no es igual a undefined (es decir que esta definido porque ya existe), 
+// creamos una nueva variable (indexOfDuplicate) que en el cart Info hace un findIndex que nos permite buscar el indice de un producto 
+// en este caso que sea igual al id. cuando esto ded true creamos una nueva variable (newQuantity) que va a ser igual a la variable
+// duplicate.quantity que sea += a quantity para que conozcamos la cantidad de elementos del mismo id que agregamos al carrito.
+// en tercera instancia hacemos un splice al cartInfo para que usando el indexOfDuplicate (el primer valor que se pasa es el punto
+// de partida para eliminar), el segundo valor en este caso 1 indica la cantidad de elementos a eliminar y en el tercer parametro
+// se  pasa la nueva lista con la cantidad de elementos a a gregar equiparando quantity a new quantity
+// finalmente seteamos el cartPrice(que inicializa en 0) a que sea la multiplicacion de lcantidad de items agregados por el precio
+// el cartCount cumple la funcionalidad de mostrar la cantidad de items que se agregan al carrito
+// en el Else lo que hace es que cuando encuentra un undefined (es decir un elemento nuevo para agregar al cartInfo) simplemente le
+// agregamos esa info al cartIndo mediante el spreadoperator (...) y pasandole el id, name, price y quantity.
+// y seteamos el cartPrice igual que en el otro caso posible.
 
     const addItem = ({id, name, price, quantity}) => {
         let duplicate = cartInfo.find((item) => item.id === id);
@@ -31,23 +43,24 @@ const ShopCartProvider = ({children}) => {
         } else {
             setCartInfo([...cartInfo,{id, name, price, quantity}]);
             setCartCount((cc)=> cc + 1);
-            // setCartCount((cc)=> cc + 1);
+    
             setCartPrice (cartPrice + (quantity * price));
         }
     }
-
-    //  const exist = cartInfo.find ((x) => x.id === id);
-    //  if (exist) {
-    //      setCartInfo(cartInfo.map ((x) => x.id === id ? {...exist, qty: exist.qty +1} : x));
-    //  } else {
-    //      setCartInfo ([...cartInfo, {...id, qty: 1}])
-    //  }
-     
-//      setCartPrice (cartPrice + pricenew);
-//      setCartInfo([...cartInfo,{id, name, pricenew}]);
-// }
+    
 
 
+    // remove va a hacer un filter del cartInfo 
+    const remove = (index, price) => {
+        let itemToDelete = cartInfo.filter(item => item.id !== index);
+        // let priceToRest = cartInfo.filter(item => item.price === price)
+        console.log(itemToDelete)
+        setCartInfo(itemToDelete)
+        setCartCount(cartCount - 1)
+        // setCartPrice(cartPrice - priceToRest)
+       }
+
+       
 // clearCart va a tener la funcion de retornar el estado del carrito a sus valores iniciale en todas sus funciones, por ello
 // el setCartCount se setea a 0 al igual que el setCartPrice y el setCartInfo se resetea a su array vacio.
 
@@ -56,38 +69,6 @@ const ShopCartProvider = ({children}) => {
         setCartPrice (0);
         setCartInfo([]);
     }
-
-
-    // remove va a tener la funcion de eliminar un item del carrito (en este caso va a ser siempre el ultimo agregado), para ello de
-    // cartInfo (el elemento que mapeamos en Carrito.jsx linea 56) usamos filter y pasamos id, name y pricenew desestructuradas haciendo
-    // una arrowfunction que con pop elimine ese id, name y price new ultimos que se agregaron.
-    // tambien seteamos el valor de setCartPrice (revisar un tema que no estaria restando bien siempre)
-    // finalmente el cartCount resta en 1
-
-    const remove = () => {
-        cartInfo.filter (({id, name, pricenew}) => {
-            cartInfo.pop (id, name, pricenew)
-            setCartPrice (cartPrice - pricenew);
-            return setCartCount (cartCount - 1)
-        }
-        )
-    }
-    
-    // const remove = ({id}) => {
-    //     let temp = cartInfo.filter (item => item.id !== id);
-    //     setCartInfo(temp);
-    //     setCartCount (cartCount - 1) 
-    // }
-
-//     const borrarProducto = (index) => {
-//         let temporal = carrito.filter(item => item.id !== index);
-//         setCarrito(temporal);
-//         setItems(items -1)
-//     }
-// Axel Mullins19:05
-// --------------------------
-// En el componente
-// onClick={ () => borrarProducto(item.id) }
 
     
    const data = {addItem, remove, cartCount, clearCart, cartInfo, cartPrice};

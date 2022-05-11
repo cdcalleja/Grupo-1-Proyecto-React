@@ -1,4 +1,4 @@
-import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import { faCartShopping, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { useContext, useState } from "react";
@@ -17,10 +17,10 @@ const Carrito = () => {
 
   return (
     <>
-      <Button className="position-relative" variant="primary" onClick={handleShow}>
+      <Button className="position-relative" variant="" onClick={handleShow} >
         <FontAwesomeIcon
           style={{ border: "1px solid black", borderRadius: "50%", padding: "10px" }}
-          icon={faCartShopping} />
+          icon={faCartShopping} onClick={handleShow}/>
         {cartCount > 0 &&
           <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
             {cartCount}
@@ -35,7 +35,7 @@ const Carrito = () => {
         <Modal.Body>
 
           <Container >
-            <Row >
+            <Row style={{textAlign:"center"}}>
               <Col lg={2} >
                 Cantidad
               </Col>
@@ -46,25 +46,27 @@ const Carrito = () => {
                 Precio Unitario
               </Col>
               <Col lg={2} >
-                
               </Col>
             </Row>
-
+            <br />
           
              {
               cartInfo.map((item) => {
                 return (
-                  <Row key={item.id}>
-                    <Col lg={3}>{item.quantity}</Col>
-                    <Col lg={3}>{item.name}</Col>
-                    <Col lg={3}>{item.price}</Col>
-                    {/* <Col> <Button onClick={remove}> agregar un item de tacho de basura </Button></Col> */}
-                    {/* <Col lg={3}> {cartPrice}</Col> */}
+                  <Row key={item.id} style={{textAlign:"center"}}>
+                    <Col lg={2}>{item.quantity}</Col>
+                    <Col lg={4}>{item.name}</Col>
+                    <Col lg={4}>{item.price}</Col>
+                    <Col lg={2}>
+                      {item.quantity === 0 ? <Button disabled> <FontAwesomeIcon icon={faXmark}/> </Button> :
+                       <Button onClick={() => remove(item.id)} style={{ border: "none"}}> <FontAwesomeIcon icon={faXmark}/> </Button>}
+                    </Col>
+                   
                   </Row>
                 )
               })
             } 
-            <br />
+            <br /><br />
             <Row >
               <Col lg={9} style={{fontStyle: "bold", fontSize: 20}}>
                 El total de tu compra es:
@@ -79,11 +81,6 @@ const Carrito = () => {
           <Button variant="secondary" onClick={handleClose}>
             Cerrar
           </Button>
-          
-     
-          {cartCount === 0 ? <Button disabled> Eliminar un item del carrito </Button> : <Button onClick={remove}> Eliminar un item del carrito </Button>}
-          
-          
           <Button variant="secondary" onClick={clearCart}>
             Vaciar carrito
           </Button>

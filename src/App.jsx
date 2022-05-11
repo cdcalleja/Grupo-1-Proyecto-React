@@ -1,7 +1,6 @@
 import NavBar from "./components/Nav/Nav.jsx";
 import Descanso from "./components/Descanso/Descanso.jsx";
 import Details from "./components/Detalles/Details";
-import ModoOscuro from "./components/Darktheme/ModoOscuro";
 import Productos from "./components/Productos/Productos";
 import Banner from "./components/Banner/Banner";
 import CarouselM from "./components/CarouselM/CarouselM";
@@ -12,13 +11,7 @@ import { ThemeProvider } from "./context/ThemeContext.js";
 import { ShopCartProvider } from "./context/ShopCartContext.js";
 
 
-
-
-
-
 function App() {
-
-
 
   return (
 
@@ -26,7 +19,6 @@ function App() {
 
         <ThemeProvider>
           <ShopCartProvider>
-            <ModoOscuro />
             <NavBar/>
             <Descanso/>
             <Banner/>
