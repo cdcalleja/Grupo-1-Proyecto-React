@@ -1,0 +1,42 @@
+.social_icon
+{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:center;
+    line-height: 200px;
+    background-color:lightgrey; 
+    transform: translateY(-10px);
+    transition: 0.5s; 
+     
+}
+
+.social_icon li
+
+{
+    list-style: none;
+}
+/* .social_icon li a 
+{
+    font-size: 1.2em;
+    color: #fff;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.5s;
+    
+} */
+.social_icon li a:hover
+{
+    transform: translateY(-10px);
+}
+.social_icon li a 
+{
+    font-size: 1.2em;
+    color: black;
+    margin: 0 10px;
+    display: inline-block;
+    transition: 0.5s; 
+    opacity: 0.75;
+    
+    };
