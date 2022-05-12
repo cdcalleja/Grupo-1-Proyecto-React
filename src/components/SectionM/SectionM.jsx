@@ -1,7 +1,11 @@
 import React from 'react';
 import img7 from "./img/img7.jpg";
-
+// import { useContext } from 'react'
+// import ThemeContext from '../../context/ThemeContext';
 const SectionM = () => {
+
+    // const {theme} = useContext(ThemeContext)
+
 return (
     <div>
         <button
@@ -17,8 +21,8 @@ return (
         <li>descuentos del 10% en mercancia seleccionada</li>
         <li>nueva temporada de invierno para grandes y chicos</li> 
         <li>nuevas sucursales en Buenos Aires</li>
-        
     </ul>
+        <p style={{marginBottom:"0px"}}>Ahora puedes realizar tus compras, las compras mayores a 15.000 no tienen costo de envio</p>
     </div>
 )
 }
