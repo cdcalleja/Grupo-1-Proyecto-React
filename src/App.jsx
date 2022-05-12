@@ -6,6 +6,7 @@ import Banner from "./components/Banner/Banner";
 import CarouselM from "./components/CarouselM/CarouselM";
 import SectionM from "./components/SectionM/SectionM";
 import Footer from "./components/Footer/Footer";
+import Redes from "./components/Redes/Redes";
 
 import "./app.css";
 
@@ -14,10 +15,10 @@ import Descanso2 from "./components/Descanso/Descanso2.jsx";
 import { ThemeProvider } from "./context/ThemeContext.js";
 
 
-
 function App() {
 
   return (
+
 
 
     <div className="proyecto">
@@ -31,11 +32,13 @@ function App() {
           <CarouselM />
           <Descanso2 />
           <SectionM />
+          <Redes />
           <Footer />
         </ShopCartProvider>
       </ThemeProvider>
 
     </div>
   );
+
 }
 export default App;
