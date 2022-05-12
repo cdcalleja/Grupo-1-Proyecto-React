@@ -9,7 +9,8 @@ function Main() {
           height: "50px",
           color: "black",
           background: "lightblue",
-          textAlign:"center"
+          textAlign:"center",
+          margin:"0px"
           }}
           > 
           Gana tu primer descuento registrando tu correo electronico <button style={{marginLeft:"1000px",background:"lightblue"}}> X </button> 
