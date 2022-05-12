@@ -1,0 +1,21 @@
+.tituloofertas {
+    text-align: center;
+    text-decoration: underline;
+}
+
+.price-old {
+    text-decoration: line-through;
+    font-weight: 500;
+    color: #4d4d4d;
+}
+
+.price-offer {
+    color: #e2001a;
+    font-weight: 600;
+}
+
+.price-name {
+    font-size: 10px;
+    color: #e2001a;
+    text-transform: uppercase;
+}
