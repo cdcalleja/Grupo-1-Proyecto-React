@@ -4,7 +4,7 @@ import "./redes.css";
 const Redes = () => {
   return (
     <div>
-    <ul className="social_icon" >
+    <ul className="social_icon">
  
     <li><a href="/"><FontAwesomeIcon icon={faFacebook} size="xl" style={{height:"40px", width:"40px"}}/></a></li>
     <li><a href="/"><FontAwesomeIcon icon={faTwitter} size="xl" style={{height:"40px", width:"40px"}}/></a></li>
