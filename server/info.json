@@ -1,0 +1,34 @@
+{
+    "principales": [
+        {
+            "id": 1,
+            "section": "accesories"
+        },
+        {
+            "id": 2,
+            "section": "outlet"
+        },
+        {
+            "id": 3,
+            "section": "about us"
+        },
+        {
+            "id": 4,
+            "section": "home"
+        }
+    ],
+    "secundarias": [
+        {
+            "id": 1,
+            "section": "men"
+        },
+        {
+            "id": 2,
+            "section": "women"
+        },
+        {
+            "id": 3,
+            "section": "kids"
+        }
+    ]
+}

@@ -1,0 +1,17 @@
+.contenedor {
+    
+    display: flex;
+    position: relative;
+}
+
+/* .logo {
+    max-width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+} */
+.w-50 {
+    max-width: 22%;
+    box-sizing: content-box;
+}

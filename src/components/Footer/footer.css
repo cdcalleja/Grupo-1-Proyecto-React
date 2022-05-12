@@ -6,8 +6,9 @@ font-family: roboto;
 list-style: none;
 }
 
-footer 
-{
+.main-footer{
+    color: white;
+    padding-top: 3em;
     position: relative;
     width: 100%;
     margin-top: 30px; 
