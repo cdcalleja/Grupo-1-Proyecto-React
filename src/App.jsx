@@ -1,3 +1,5 @@
+import Seccion1 from "./components/Seccion1/Seccion1";
+import CarouselS from "./components/CarouselS/CarouselS";
 import NavBar from "./components/Nav/Nav.jsx";
 // import Descanso from "./components/Descanso/Descanso.jsx";
 import Details from "./components/Detalles/Details";
@@ -12,16 +14,18 @@ import { ShopCartProvider } from "./context/shopCartContext.js";
 import Descanso2 from "./components/Descanso/Descanso2.jsx";
 import { ThemeProvider } from "./context/ThemeContext.js";
 
+
 function App() {
 
   return (
-
     <div className="proyecto">
       <ThemeProvider>
         <ShopCartProvider>
           <Main/>
           <NavBar />
           <Banner />
+          <Seccion1 />
+          <CarouselS />
           <Productos />
           <Details />
           <Descanso2 />
@@ -30,7 +34,6 @@ function App() {
           <Footer />
         </ShopCartProvider>
       </ThemeProvider>
-
     </div>
   );
 }
