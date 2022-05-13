@@ -2,7 +2,7 @@
     "principales": [
         {
             "id": 1,
-            "section": "accesories"
+            "section": "accesorios"
         },
         {
             "id": 2,
@@ -10,25 +10,25 @@
         },
         {
             "id": 3,
-            "section": "about us"
+            "section": "sobre nosotros"
         },
         {
             "id": 4,
-            "section": "home"
+            "section": "inicio"
         }
     ],
     "secundarias": [
         {
             "id": 1,
-            "section": "men"
+            "section": "hombre"
         },
         {
             "id": 2,
-            "section": "women"
+            "section": "mujer"
         },
         {
             "id": 3,
-            "section": "kids"
+            "section": "niños"
         }
     ]
 }

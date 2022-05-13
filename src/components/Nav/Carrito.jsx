@@ -17,9 +17,9 @@ const Carrito = () => {
 
   return (
     <>
-      <Button className="position-relative" variant="primary" onClick={handleShow}>
+      <Button className="position-relative" variant="none" onClick={handleShow}>
         <FontAwesomeIcon
-          style={{ border: "1px solid black", borderRadius: "50%", padding: "10px" }}
+          style={{ border: "1px solid black", borderRadius: "50%", padding: "10px", fontSize:"25px"}}
           icon={faCartShopping} />
         {cartCount > 0 &&
           <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">

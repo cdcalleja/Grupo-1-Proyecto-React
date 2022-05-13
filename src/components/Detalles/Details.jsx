@@ -29,8 +29,8 @@ const Details = () => {
                             <Card className="text-center shadow m-2 m-md-1" style={{ boxSizing: "content-box" }} >
                                 <Card.Img className="w-50 mx-auto" variant="top" src={item.img} />
                                 <Card.Body>
-                                    <Card.Title style={{ textDecoration: "underline" }} >{item.h5} </Card.Title>
-                                    <Card.Text>
+                                    <Card.Title style={{ textDecoration: "underline", fontFamily: "cursive" }} >{item.h5} </Card.Title>
+                                    <Card.Text style={{fontFamily:"cursive"}}>
                                         {item.p}
                                     </Card.Text>
                                 </Card.Body>

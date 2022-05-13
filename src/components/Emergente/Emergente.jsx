@@ -1,7 +1,7 @@
 
 import { Modal, Button, Container, Row, Col } from 'react-bootstrap'
 import {  useContext, useState } from 'react';
-import shopCartContext from '../../context/ShopCartContext';
+import shopCartContext from '../../context/shopCartContext';
 
 
 const Emergente = ({id, name, pricenew}) => {

@@ -34,7 +34,6 @@ const ShopCartProvider = ({children}) => {
 
     const addItem = ({id, name, price, quantity}) => {
         let duplicate = cartInfo.find((item) => item.id === id);
-        console.log(duplicate);
         if (duplicate !== undefined) {
             const indexOfDuplicate = cartInfo.findIndex((producto) => producto.id === id);
             const newQuantity = (duplicate.quantity += quantity);
@@ -53,7 +52,6 @@ const ShopCartProvider = ({children}) => {
     // remove va a hacer un filter del cartInfo 
     const remove = (index) => {
         let itemToDelete = cartInfo.filter(item => item.id !== index);        
-        console.log(itemToDelete)
         setCartInfo(itemToDelete)
         setCartCount(cartCount - 1)
         // setCartPrice(cartPrice - priceToRest)
@@ -70,7 +68,6 @@ const ShopCartProvider = ({children}) => {
         setCartInfo([]);
     }
 
-    let totalPrice = cartInfo.map((item) => totalPrice += item.price);
 
 
    const data = {addItem, remove, cartCount, clearCart, cartInfo, cartPrice};

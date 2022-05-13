@@ -1,5 +1,5 @@
 import './CarouselS.css';
-import React, { Component } from "react";
+import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -13,6 +13,9 @@ import img07 from './imagenes/accesoriosmujer.jpg';
 import img08 from './imagenes/accesorioshombre.jpg';
 import img09 from './imagenes/marroquineria.jpg';
 import img10 from './imagenes/camping.jpg';
+
+import ThemeContext from '../../context/ThemeContext';
+import { useContext } from "react";
 
 function SamplePrevArrow(props) {
   const { className, style, onClick } = props;
@@ -36,9 +39,13 @@ function SampleNextArrow(props) {
   );
 }
 
-export default class MultipleItems extends Component {
-  render() {
-    const settings = {
+// export default class MultipleItems extends Component {
+
+  const CarouselS = () => {
+
+    const { theme } = useContext(ThemeContext)
+
+      var settings = {
       dots: true,
       infinite: true,
       slidesToShow: 5,
@@ -73,9 +80,12 @@ export default class MultipleItems extends Component {
         }
       ]
     };
-
+    
     return (
+      <div className={theme}>
+
       <div className='sec' style={{width: "90%", margin: "auto"}}>
+        <br /><br />
         <h2>Secciones</h2>
           <Slider {...settings}>
             <div className='img'>
@@ -119,7 +129,11 @@ export default class MultipleItems extends Component {
               <img src={img10} className='img-fluid' alt="camping" />
             </div>
             </Slider>
+            <br /><br />
           </div>
+      </div>
     );
-  }
+  
 }
+
+export default CarouselS;

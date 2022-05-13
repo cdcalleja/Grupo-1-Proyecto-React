@@ -2,13 +2,13 @@ import { Button } from 'react-bootstrap';
 import React, { useContext } from 'react'
 import { Card } from 'react-bootstrap';
 import img8 from "../Descanso/img/descansito2.jpg";
-// import ThemeContext from '../../context/ThemeContext';
-
+import ThemeContext from '../../context/ThemeContext';
+import "./descanso2.css";
 
 
 const Descanso2 = () => {
 
-    // const {theme} = useContext(ThemeContext)
+    const {theme} = useContext(ThemeContext)
 
 
     const estilos = {
@@ -19,20 +19,17 @@ const Descanso2 = () => {
     }
 
     const estilos2 = {
-        fontFamily: "Cormorant, sans serif",
-        fontWeight: "700",
+        fontFamily: "cursive",
+        fontWeight: "300",
         fontSize: "40px",
         lineHeight: "48px",
     }
 
-    const boton = {
-        width: "330px",
-        height: "45px"
-    }
+    
 
     return (
 
-        <div>
+        <div className={theme}>
             <Card>
                 <Card.Img className="md-block" variant="top" src={img8} style={estilos} />
                 <Card.ImgOverlay style={{ background: "none" }}>
@@ -41,7 +38,9 @@ const Descanso2 = () => {
                             Tenemos mas ofertas para vos
                         </Card.Text>
                         <Card.Text style={estilos2}>Haz click en ver ofertas</Card.Text>
-                        <Button className="mx-auto" variant="primary" style={boton}>Ver Ofertas</Button>
+                        <a href="#productos">
+                        <Button className="boton" style={{backgroundColor: "orange"}} >Ver Ofertas</Button>
+                        </a>
                     </div>
 
                 </Card.ImgOverlay>

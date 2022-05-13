@@ -17,9 +17,9 @@ const NavBar = () => {
  
 
   const styles = {
-    fontSize: "15px",
+    fontSize: "25px",
     textTransform: "capitalize",
-    fontFamily: "poppins, sans serif",
+    fontFamily: "cursive",
   }
 
 
@@ -27,7 +27,7 @@ const NavBar = () => {
 
   useEffect(() => {
 
-    axios("http://localhost:4000/secundarias").then(res => {
+    axios("http://localhost:4001/secundarias").then(res => {
       setData(res.data)
     })
 
@@ -37,7 +37,7 @@ const NavBar = () => {
 
   useEffect(() => {
 
-    axios("http://localhost:4000/principales").then(res => {
+    axios("http://localhost:4001/principales").then(res => {
       setData2(res.data)
     })
 
@@ -56,7 +56,7 @@ const NavBar = () => {
   return (
 
     <div className={theme}>
-    <Navbar className="shadow" sticky="top" collapseOnSelect expand="lg" bg="light" variant="light" style={{ borderRadius: "20px" }}>
+    <Navbar className="shadow" sticky="top" collapseOnSelect expand="lg" variant="light" >
       <Container className="d-flex p-2">
         {/* fijate aca de cambiarle el className a un fluid */}
         <Navbar.Brand href="#home">
@@ -65,7 +65,7 @@ const NavBar = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mx-auto" style={styles}>
-            <NavDropdown title="Clothes" id="collasible-nav-dropdown" >
+            <NavDropdown title="Prendas" id="collasible-nav-dropdown" >
                {
                 data.map((item, index) => {
                   return (

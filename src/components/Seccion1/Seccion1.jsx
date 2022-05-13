@@ -1,8 +1,12 @@
 import './seccion1.css';
-import img from './Img/presentacion.jpg';
+import img from './Img/Presentacion.jpg';
+import ThemeContext from '../../context/ThemeContext';
+import { useContext } from "react";
 
 const Seccion1 = () => {
+  const { theme } = useContext(ThemeContext)
   return (
+    <div className={theme}>
     <div className='container-fluid'>
       <div className='row'>
         <div className='col-12 col-md-6'>
@@ -16,6 +20,7 @@ const Seccion1 = () => {
         </div>
       </div>
     </div>
+    </div> 
   )
 }
 

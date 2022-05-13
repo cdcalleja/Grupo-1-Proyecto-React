@@ -1,9 +1,12 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faTwitter, faLinkedin, faInstagram, faYoutube } from "@fortawesome/free-brands-svg-icons";
 import "./redes.css";
+import { useContext } from "react";
+import ThemeContext from "../../context/ThemeContext";
 const Redes = () => {
+  const { theme } = useContext(ThemeContext);
   return (
-    <div>
+    <div className={theme}>
     <ul className="social_icon">
  
     <li><a href="/"><FontAwesomeIcon icon={faFacebook} size="xl" style={{height:"40px", width:"40px"}}/></a></li>
