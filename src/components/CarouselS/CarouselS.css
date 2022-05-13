@@ -1,0 +1,20 @@
+*{
+    box-sizing: border-box;  
+}
+
+h2 {
+    font-size: 50px;
+    font-family: cursive;
+    text-align: center;
+    text-decoration: underline;
+
+}
+
+h3 {
+    font-family: cursive;
+    text-align: center;
+}
+
+.img {
+    padding: 10px;
+}

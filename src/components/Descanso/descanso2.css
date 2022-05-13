@@ -1,0 +1,9 @@
+.boton {
+        width: 330px;
+        height: 45px;
+    }
+
+    .boton:hover {
+        transform: translateY(-4px);
+        transition: 0.5 s;
+    }
