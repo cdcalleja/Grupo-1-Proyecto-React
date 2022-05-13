@@ -4,12 +4,11 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Container, Col, Card } from "react-bootstrap";
 import '../Productos/products.css'
-// import { ofertasDB } from "../../data/ofertas";
+import { ofertasDB } from "../../data/ofertas";
 import Emergente from "../Emergente/Emergente";
 import { useContext, useEffect, useState } from 'react'
 import ThemeContext from '../../context/ThemeContext';
 import axios from "axios";
-
 
 function SampleNextArrow(props) {
     const { className, style, onClick } = props;
@@ -39,7 +38,7 @@ const Productos = () => {
 
     const { theme } = useContext(ThemeContext)
 
-    const [data, setData] = useState([]);
+    const [data, setData] = useState(ofertasDB)
 
     useEffect(() => {
         axios('http://localhost:4000/ofertas').then(res => {
@@ -47,10 +46,6 @@ const Productos = () => {
         })
     }, [])
 
-
-// instalar json server: npm install -g json-server
-// instalar axios -> package.json -> dependencies -> agregar axios - autoimportar - npm i
-    // json-server --watch data.json --port 4000
 
     var settings = {
         dots: true,
