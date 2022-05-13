@@ -26,8 +26,8 @@
 
 -Autores del proyecto:
   1)  Berta Macina
-      * linkdin
-      * mail
+      * linkdin https://www.linkedin.com/in/berta-macina-b3b6596/
+      * mail bmacina2018@gmail.com
   2)  Mileydi Moreno
       * linkdin
       * mail
