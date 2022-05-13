@@ -6,9 +6,8 @@ import { Container, Col, Card } from "react-bootstrap";
 import '../Productos/products.css'
 import { ofertasDB } from "../../data/ofertas";
 import Emergente from "../Emergente/Emergente";
-import { useContext, useEffect, useState } from 'react'
+import { useContext,  useState } from 'react'
 import ThemeContext from '../../context/ThemeContext';
-import axios from "axios";
 
 function SampleNextArrow(props) {
     const { className, style, onClick } = props;
@@ -40,11 +39,6 @@ const Productos = () => {
 
     const [data, setData] = useState(ofertasDB)
 
-    useEffect(() => {
-        axios('http://localhost:4000/ofertas').then(res => {
-            setData(res.data)
-        })
-    }, [])
 
 
     var settings = {

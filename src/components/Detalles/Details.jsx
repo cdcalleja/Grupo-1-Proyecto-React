@@ -1,21 +1,17 @@
 import { Container, Row, Col, Card } from "react-bootstrap";
-// import { whyusDB } from "../../data/whyus";
+import { whyusDB } from "../../data/whyus";
 import '../Detalles/details.css';
-import { useContext, useEffect, useState } from 'react'
+import { useContext, useState } from 'react'
 import ThemeContext from '../../context/ThemeContext';
-import axios from "axios";
+
 
 const Details = () => {
 
     const { theme } = useContext(ThemeContext)
 
-    const [data, setData] = useState([]);
+    const [data, setData] = useState(whyusDB);
 
-    useEffect(() => {
-        axios('http://localhost:4000/whyus').then(res => {
-            setData(res.data)
-        })
-    }, [])
+    
 
 
     return (

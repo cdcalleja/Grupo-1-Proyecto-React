@@ -6,14 +6,16 @@ import { Navbar, Container, NavDropdown, Nav } from "react-bootstrap"
 import { useContext } from 'react'
 import ThemeContext from '../../context/ThemeContext';
 import Carrito from "./Carrito"
-import { useEffect, useState } from "react"
-import axios from "axios"
+import { useState } from "react"
+import { principalesDB } from "../../data/principal"
+import { secundariasDB } from "../../data/secundaria"
+
 
 
 const NavBar = () => {
 
   const {theme, handleTheme} = useContext(ThemeContext);
-  // const { text } = useContext(LanguajeContext)
+ 
  
 
   const styles = {
@@ -23,34 +25,14 @@ const NavBar = () => {
   }
 
 
-  const [data, setData] = useState([])
+  const [data, setData] = useState(secundariasDB)
 
-  useEffect(() => {
 
-    axios("http://localhost:4001/secundarias").then(res => {
-      setData(res.data)
-    })
-
-  }, [])
-
-  const [data2, setData2] = useState([])
-
-  useEffect(() => {
-
-    axios("http://localhost:4001/principales").then(res => {
-      setData2(res.data)
-    })
-
-  }, [])
+  const [data2, setData2] = useState(principalesDB)
 
 
 
 
-  // npm install -g json-server
-
-  // instalar json server: npm install -g json-server
-  // instalar axios -> package.json -> dependencies -> agregar axios - autoimportar - npm i
-  // json-server --watch data.json --port 4000
 
 
   return (
@@ -67,16 +49,16 @@ const NavBar = () => {
           <Nav className="mx-auto" style={styles}>
             <NavDropdown title="Prendas" id="collasible-nav-dropdown" >
                {
-                data.map((item, index) => {
+                data.map((item) => {
                   return (
-                    <NavDropdown.Item href="#action/3.1" key={index}>{item.section}</NavDropdown.Item>)
+                    <NavDropdown.Item href="#action/3.1" key={item.id}>{item.section}</NavDropdown.Item>)
                 })
               }
             </NavDropdown>
             {
-              data2.map((item, index) => {
+              data2.map((item) => {
                 return (
-                  <Nav.Link className="mx-4" href="#accesories" key={index}>{item.section}</Nav.Link>
+                  <Nav.Link className="mx-4" href="#accesories" key={item.id}>{item.section}</Nav.Link>
                 )
               })
             }
