@@ -8,7 +8,7 @@ import SectionM from "./components/SectionM/SectionM";
 import Footer from "./components/Footer/Footer";
 import Redes from "./components/Redes/Redes";
 import "./app.css";
-import { ShopCartProvider } from "./context/ShopCartContext.js";
+import { ShopCartProvider } from "./context/shopCartContext.js";
 import Descanso2 from "./components/Descanso/Descanso2.jsx";
 import { ThemeProvider } from "./context/ThemeContext.js";
 import Main from "./components/Main/Main";

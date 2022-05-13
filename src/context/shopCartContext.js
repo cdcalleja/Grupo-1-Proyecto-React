@@ -2,7 +2,7 @@
 import {createContext, useState} from "react";
 
 
-const ShopCartContext = createContext();
+const shopCartContext = createContext();
 
 const ShopCartProvider = ({children}) => {
 
@@ -75,8 +75,8 @@ const ShopCartProvider = ({children}) => {
 
    const data = {addItem, remove, cartCount, clearCart, cartInfo, cartPrice};
 
-    return (<ShopCartContext.Provider value={data}>{children}</ShopCartContext.Provider>)
+    return (<shopCartContext.Provider value={data}>{children}</shopCartContext.Provider>)
 }
 
 export {ShopCartProvider}
-export default ShopCartContext;
+export default shopCartContext;

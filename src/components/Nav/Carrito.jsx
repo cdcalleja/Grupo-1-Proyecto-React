@@ -2,7 +2,7 @@ import { faCartShopping, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useContext, useState } from 'react'
 import { Button, Col, Container, Modal, Row } from 'react-bootstrap';
-import shopCartContext from '../../context/ShopCartContext';
+import shopCartContext from '../../context/shopCartContext';
 
 
 const Carrito = () => {
