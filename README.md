@@ -29,8 +29,8 @@
       * linkdin
       * mail
   2)  Mileydi Moreno
-      * linkdin
-      * mail
+      * https://www.linkedin.com/in/mileydi-dayana-moreno-casta%C3%B1o-68302315a/
+      * milamoreno91@gmail.com
   3)  Rodrigo De Arteaga
       * linkdin
       * mail
