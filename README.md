@@ -32,8 +32,8 @@
       * linkdin
       * mail
   3)  Rodrigo De Arteaga
-      * linkdin
-      * mail
+      * linkdin https://www.linkedin.com/in/rdearteaga/
+      * mail rodrigodearteaga@gmail.com
   4)  Santiago Ponce
       * linkdin
       * mail
