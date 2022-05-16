@@ -48,9 +48,6 @@ const Productos = () => {
     }, [])
 
 
-// instalar json server: npm install -g json-server
-// instalar axios -> package.json -> dependencies -> agregar axios - autoimportar - npm i
-    // json-server --watch data.json --port 4000
 
     var settings = {
         dots: true,

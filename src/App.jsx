@@ -1,7 +1,6 @@
 import Seccion1 from "./components/Seccion1/Seccion1";
 import CarouselS from "./components/CarouselS/CarouselS";
 import NavBar from "./components/Nav/Nav.jsx";
-// import Descanso from "./components/Descanso/Descanso.jsx";
 import Details from "./components/Detalles/Details";
 import Productos from "./components/Productos/Productos";
 import Banner from "./components/Banner/Banner";

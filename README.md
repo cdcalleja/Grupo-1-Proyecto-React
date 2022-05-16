@@ -26,20 +26,20 @@
 
 -Autores del proyecto:
   1)  Berta Macina
-      * linkdin
-      * mail
+      * linkdin https://www.linkedin.com/in/berta-macina-b3b6596/
+      * mail bmacina2018@gmail.com
   2)  Mileydi Moreno
       * https://www.linkedin.com/in/mileydi-dayana-moreno-casta%C3%B1o-68302315a/
       * milamoreno91@gmail.com
   3)  Rodrigo De Arteaga
-      * linkdin
-      * mail
+      * linkdin https://www.linkedin.com/in/rdearteaga/
+      * mail rodrigodearteaga@gmail.com
   4)  Santiago Ponce
       * linkdin
       * mail
   5)  Christian Calleja
-      * linkdin
-      * mail
+      * linkdin: https://www.linkedin.com/in/christian-daniel-calleja-a7b849221/
+      * mail: christiandcalleja@yahoo.com.ar
 
 
 
