@@ -29,11 +29,11 @@
       * linkdin https://www.linkedin.com/in/berta-macina-b3b6596/
       * mail bmacina2018@gmail.com
   2)  Mileydi Moreno
-      * linkdin
+      * linkdin 
       * mail
   3)  Rodrigo De Arteaga
-      * linkdin
-      * mail
+      * linkdin https://www.linkedin.com/in/rdearteaga/
+      * mail rodrigodearteaga@gmail.com
   4)  Santiago Ponce
       * linkdin
       * mail
