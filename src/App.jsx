@@ -12,7 +12,7 @@ import "./app.css";
 import { ShopCartProvider } from "./context/shopCartContext.js";
 import Descanso2 from "./components/Descanso/Descanso2.jsx";
 import { ThemeProvider } from "./context/ThemeContext.js";
-import Main from "./components/Main/Main";
+import Main from "./components/main/Main";
 
 
 function App() {
