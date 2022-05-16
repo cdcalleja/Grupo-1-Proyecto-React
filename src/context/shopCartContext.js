@@ -70,7 +70,7 @@ const ShopCartProvider = ({children}) => {
         setCartInfo([]);
     }
 
-    // let totalPrice = cartInfo.map((item) => totalPrice += item.price);
+    let totalPrice = cartInfo.map((item) => totalPrice += item.price);
 
 
    const data = {addItem, remove, cartCount, clearCart, cartInfo, cartPrice};

@@ -38,8 +38,8 @@
       * linkdin
       * mail
   5)  Christian Calleja
-      * linkdin
-      * mail
+      * linkdin: https://www.linkedin.com/in/christian-daniel-calleja-a7b849221/
+      * mail: christiandcalleja@yahoo.com.ar
 
 
 
