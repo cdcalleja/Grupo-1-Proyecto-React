@@ -53,7 +53,7 @@
 
 - GIF animado mostrando usabilidad del sitio
 
-!(Me)(https://github.com/cdcalleja/Grupo-1-Proyecto-React/blob/3a64ffbe8a4f6447881ae425fe3bf3d0cb25553e/GIF%20Proyecto%20Grupo%201.gif)
+![Me](https://github.com/cdcalleja/Grupo-1-Proyecto-React/blob/3a64ffbe8a4f6447881ae425fe3bf3d0cb25553e/GIF%20Proyecto%20Grupo%201.gif)
 
 -Autores del proyecto:
   1)  Berta Macina
