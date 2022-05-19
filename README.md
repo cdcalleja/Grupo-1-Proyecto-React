@@ -29,8 +29,8 @@
       * linkdin https://www.linkedin.com/in/berta-macina-b3b6596/
       * mail bmacina2018@gmail.com
   2)  Mileydi Moreno
-      * linkdin 
-      * mail
+      * linkdin https://www.linkedin.com/in/mileydi-dayana-moreno-casta%C3%B1o-68302315a/ 
+      * mail milamoreno91@gmail.com
   3)  Rodrigo De Arteaga
       * linkdin https://www.linkedin.com/in/rdearteaga/
       * mail rodrigodearteaga@gmail.com
